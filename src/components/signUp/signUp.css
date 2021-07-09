@@ -1,0 +1,40 @@
+.signUp {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 5px;
+
+    height: 20rem;
+
+    background: #ffffff40;
+
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+}
+
+.signUp>img {
+    height: 2rem;
+    object-fit: contain;
+}
+
+.signUp-btn-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 4rem;
+    text-align: center;
+}
+
+.signUp-btn-container p {
+    color: white;
+}
+
+.signUp-btn-container span {
+    font-weight: bolder;
+    color: #BB000E;
+    cursor: pointer;
+}

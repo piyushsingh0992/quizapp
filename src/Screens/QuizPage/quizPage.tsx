@@ -12,7 +12,7 @@ const QuizPage = () => {
             <ActiveQuizDetails />
             <Question />
             {/* <RulesModal /> */}
-            <SubmitModal />
+            {/* <SubmitModal /> */}
         </div>
     );
 };

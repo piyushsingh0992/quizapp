@@ -1,0 +1,50 @@
+.leaderBoard {
+    border-radius: 10px;
+    padding: 1rem;
+    width: 20rem;
+    margin: 1rem;
+
+    background: #ffffff40;
+    /* box-shadow: 0 8px 16px 0 rgba(31, 38, 135, 0.37); */
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+}
+
+.leaderBoard>h1 {
+    color: white;
+    text-align: center;
+}
+
+.leaderBoard-table {
+    width: 100%;
+    text-align: center;
+}
+
+.leaderBoard-table th {
+    color: #BB000E;
+    font-size: 1.6rem;
+    font-weight: 900;
+    padding: 0.5rem 0;
+    background-color: white;
+}
+
+.leaderBoard-table td {
+    font-size: 1.5rem;
+    font-weight: 900;
+    padding: 0.5rem 0;
+}
+
+
+
+.type-b td {
+    color: white;
+    background-color: #BB000E;
+}
+
+
+.type-a td {
+    color: #BB000E;
+    background-color: white;
+}

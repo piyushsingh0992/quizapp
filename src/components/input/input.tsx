@@ -1,5 +1,5 @@
 import React from 'react';
-
+import "./input.css";
 type inputPropsType = {
     label: string; inputType?: string; value: any
 }

@@ -7,6 +7,7 @@
     align-items: center;
     justify-content: space-between;
     background-color: black;
+    z-index: 3;
 
 }
 
