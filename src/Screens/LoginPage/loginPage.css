@@ -3,15 +3,10 @@
     min-height: 100vh;
 }
 
-
-/* .loginPage {
-    background-color: black;
-    min-height: 100vh;
-} */
-
 .loginPage-popup {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 92.5vh;
+    min-height: 92vh;
+
 }
