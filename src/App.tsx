@@ -5,7 +5,8 @@ import HomePage from "./Screens/HomePage/homePage";
 import QuizPage from "./Screens/QuizPage/quizPage";
 import LeaderBoardPage from "./Screens/LeaderBoardPage/leaderBoardPage";
 import LoginPage from "./Screens/LoginPage/loginPage";
-import Error404Page from "./Screens/Error404Page/error404Page"
+import Error404Page from "./Screens/Error404Page/error404Page";
+import PrivateRoute from "./components/privateRoute/privateRoute"
 export default function App() {
 
 
@@ -14,8 +15,8 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/quiz/:quizId" element={<QuizPage />} />
-        <Route path="/leaderBoardPage" element={<LeaderBoardPage />} />
+        <PrivateRoute path="/quiz/:quizId" element={<QuizPage />} />
+        <Route path="/leaderBoard" element={<LeaderBoardPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/*" element={<Error404Page />} />
       </Routes>
