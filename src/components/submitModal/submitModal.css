@@ -1,0 +1,57 @@
+.submitModal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.submitModal {
+    border-radius: 5px;
+    padding: 1.5rem;
+    text-align: center;
+    position: relative;
+
+
+    width: 40vw;
+    background: #ffffff40;
+    box-shadow: 0 8px 16px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+}
+
+
+.submitModal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    height: 1rem;
+    cursor: pointer;
+}
+
+.submitModal p {
+    color: white;
+    font-weight: bolder;
+    font-size: 1.5rem;
+
+}
+
+
+.submitModal-Submitted {
+    height: 7rem;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .submitModal {
+        width: 60vw;
+    }
+
+}

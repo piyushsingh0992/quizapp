@@ -9,7 +9,6 @@ const Navbar = () => {
             <img src={logo} className="navbar-logo" />
             <div className="navbar-right">
                 <p>LeaderBoard</p>
-                <p>History</p>
                 <p>Login</p>
             </div>
             <img className="navbar-menu" src={menu} />

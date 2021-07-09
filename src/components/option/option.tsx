@@ -6,9 +6,14 @@ type optionPropType = {
 
 const Option = ({ text, isRight }: optionPropType) => {
     return (
-        <div className="option">
+
+        <div className="option ">
             <p>{text}</p>
         </div>
+        // <div className="selectedOption">
+        //     <p>{text}</p>
+        // </div>
+
     );
 };
 

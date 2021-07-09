@@ -1,0 +1,58 @@
+.rulesModal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rulesModal {
+    border-radius: 5px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+
+
+    background: #ffffff40;
+    box-shadow: 0 8px 16px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+
+.rulesModal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    height: 1rem;
+    cursor: pointer;
+}
+
+
+
+.rulesModal p {
+    color: #bb000e;
+    font-weight: bolder;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.rulesModal ol {
+    margin: 1rem;
+}
+
+.rulesModal li {
+    color: white;
+    font-size: 1.3rem;
+    margin: 0.8rem 0;
+}
