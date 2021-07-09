@@ -1,0 +1,23 @@
+.questions-container {
+    text-align: center;
+    padding: 0rem 5rem 1rem 5rem;
+
+}
+
+.question-img {
+    height: 15rem;
+    object-fit: contain;
+}
+
+.question {
+    color: white;
+}
+
+.options-container{
+    display: grid;
+    grid-template-columns: 40vw 40vw;
+    grid-template-rows: auto;
+    grid-gap:20px ;
+    justify-content: center;
+   
+}

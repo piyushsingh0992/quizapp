@@ -1,0 +1,39 @@
+.btn {
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .default {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 800;
+  }
+  
+  .btn-primary {
+    background-color: #BB000E;
+    border: 2.5px solid #BB000E;
+    color: #ffffff;
+  }
+  
+  .btn-primary:hover {
+    border: 2.5px solid #BB000E;
+    color: #BB000E;
+    background-color: transparent;
+
+    box-shadow: 0.5em 0.5em 0.5em -0.2em #BB000E;
+    transform: translateY(-0.25em);
+  }
+
+  
+  .btn-secondary {
+    border: 2px solid #BB000E;
+    color: #BB000E;
+    background-color: transparent;
+  }
+  
+  .btn-secondary:hover {
+    border: 2px solid #BB000E;
+    color: #ffffff;
+    background-color: #BB000E;
+
+  }

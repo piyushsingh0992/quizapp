@@ -1,0 +1,32 @@
+.quiz-cateogry {
+    padding:3rem 0;
+
+    position: relative;
+    max-width: 100vw;
+    overflow: hidden;
+}
+
+.quiz-cateogry>.left-arrow {
+    height: 2.5rem;
+    position: absolute;
+    top: 45%;
+    left: 0;
+    z-index: 3;
+}
+
+.quiz-cateogry>.right-arrow {
+    height: 2.5rem;
+    position: absolute;
+    top: 45%;
+    right: 0;
+    z-index: 3;
+}
+
+.quiz-card-container {
+    display: flex;
+    align-items: center;
+    max-width: 100vw;
+    position: relative;
+    transition: all 0.5s;
+
+}

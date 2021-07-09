@@ -1,0 +1,37 @@
+.quizCard {
+    background: #ffffff40;
+    box-shadow: 0 8px 16px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    border-radius: 5px;
+    height: 23rem;
+    min-width: 13rem;
+
+    padding: 1rem;
+    text-align: center;
+
+    margin: 1rem;
+
+    position: relative;
+    z-index: 2;
+}
+
+.quizCard h1 {
+    color: white;
+}
+
+.quizCard-active {
+    transform: scale(1.1);
+}
+
+.quizCard>img {
+    height: 70%;
+    object-fit: contain;
+}
+
+.quizCard>h1 {
+    font-size: 1.7rem;
+}
