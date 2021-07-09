@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import { Routes, Route } from "react-router-dom";
 import "./app.css";
 import HomePage from "./Screens/HomePage/homePage";
 import QuizPage from "./Screens/QuizPage/quizPage";
@@ -11,11 +11,14 @@ export default function App() {
 
   return (
     <div className="app">
-      {/* <HomePage /> */}
-      {/* <QuizPage /> */}
-      {/* <LeaderBoardPage /> */}
-      {/* <LoginPage /> */}
-      <Error404Page />
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/quiz/:quizId" element={<QuizPage />} />
+        <Route path="/leaderBoardPage" element={<LeaderBoardPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/*" element={<Error404Page />} />
+      </Routes>
     </div>
 
   );
