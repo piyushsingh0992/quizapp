@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Navigate, Route } from "react-router-dom";
-
+import { useAuth } from "../../context/authContext/authContext";
 type privateRouteType = {
     path: string;
     element: React.ReactElement;
@@ -8,9 +8,12 @@ type privateRouteType = {
 }
 
 const PrivateRoute = ({ path, ...props }: privateRouteType) => {
-    const [login, loginSetter] = useState<boolean>(true)
 
-    return login ? (
+    let { auth: { loginStatus } } = useAuth();
+
+    debugger;
+
+    return loginStatus ? (
         <Route path={path} {...props} />
     ) : (
         <Navigate state={{ from: path }} replace to="/login" />
