@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { Dispatch } from 'react';
 import "./signIn.css";
 import Input from "../input/input";
 import Button from "../buttton/button";
 import logo from "../../utils/images/logo.png";
-const SignIn = () => {
+
+type SignInProps = {
+    alreadyUserSetter: Dispatch<boolean>
+}
+const SignIn = ({alreadyUserSetter}:SignInProps) => {
     return (
         <div className="signIn" >
             <img src={logo} />
@@ -20,6 +24,7 @@ const SignIn = () => {
                 <p >
                     Not a Member yet ?
                     <span
+                                            onClick={() => { alreadyUserSetter(false) }}
                     >
                         &nbsp; Sign Up
                     </span>
