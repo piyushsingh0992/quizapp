@@ -4,9 +4,7 @@ import Input from "../input/input";
 import Button from "../buttton/button";
 import logo from "../../utils/images/logo.png";
 
-type SignInProps = {
-    alreadyUserSetter: Dispatch<boolean>
-}
+
 const SignIn = ({alreadyUserSetter}:SignInProps) => {
     return (
         <div className="signIn" >

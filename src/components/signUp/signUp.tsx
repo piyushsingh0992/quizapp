@@ -1,12 +1,10 @@
-import React, { Dispatch } from 'react';
+import React, { Dispatch, useEffect } from 'react';
 import "./signUp.css";
 import Input from "../input/input";
 import logo from "../../utils/images/logo.png";
 import Button from "../buttton/button";
 
-type SignUpProps = {
-    alreadyUserSetter: Dispatch<boolean>
-}
+
 
 const SignUp = ({ alreadyUserSetter }: SignUpProps) => {
     return (
@@ -16,7 +14,6 @@ const SignUp = ({ alreadyUserSetter }: SignUpProps) => {
                 label="User Name"
                 value=""
             />
-
             <Input
                 label="User Id"
                 value=""

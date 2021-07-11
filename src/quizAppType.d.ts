@@ -16,3 +16,11 @@ type authContextType = {
     auth: authStateType
     authDispatch: Dispatch<authActionType>
 }
+
+type SignUpProps = {
+    alreadyUserSetter: Dispatch<boolean>
+}
+
+type SignInProps = {
+    alreadyUserSetter: Dispatch<boolean>
+}
