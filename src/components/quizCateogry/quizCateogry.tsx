@@ -56,8 +56,8 @@ const QuizCateogry = () => {
             />
             <div className="quiz-card-container" style={{ left: `${position}rem` }} >
 
-                {quizArray?.map(({ quizImg, quizName }: quizDetails, index) => {
-                    return <QuizCard quizImg={quizImg} quizName={quizName} />
+                {quizArray?.map(({ quizImg, quizName,quizId }: quizDetails, index) => {
+                    return <QuizCard quizImg={quizImg} quizName={quizName} quizId={quizId}/>
                 })}
             </div>
         </div>

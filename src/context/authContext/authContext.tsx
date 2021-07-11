@@ -17,7 +17,7 @@ type authContextType = {
 }
 
 let initialauthState = {
-    loginStatus: false
+    loginStatus: true
 }
 
 const AuthContext = createContext<authContextType>({

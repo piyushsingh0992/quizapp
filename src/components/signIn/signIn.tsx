@@ -10,12 +10,10 @@ const SignIn = () => {
             <Input
                 label="User Id"
                 value=""
-
             />
             <Input
                 label="Password"
                 value=""
-
             />
             <div className="signin-btn-container">
                 <Button text="Sign In" />
