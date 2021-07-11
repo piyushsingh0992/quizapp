@@ -3,12 +3,13 @@ import { createContext, useReducer, ReactNode, Dispatch, useContext } from "reac
 type userDetailsType = {
     userName: string,
     userKey: string
-
 }
 
 type authStateType = {
     loginStatus: boolean, userDetails?: userDetailsType
 }
+
+
 
 type authContextType = {
     auth: authStateType
