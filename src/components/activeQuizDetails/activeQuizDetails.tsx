@@ -7,7 +7,8 @@ import alarm from "../../utils/images/icons/alarm.png";
 type activeQuizDetails = {
     currentQuestion: number
     , totalQuestion: number,
-    currentQuestionSetter: Dispatch<React.SetStateAction<number>>
+    currentQuestionSetter: Dispatch<React.SetStateAction<number>>,
+    timeString: string
 }
 const ActiveQuizDetails = (props: activeQuizDetails) => {
     return (
@@ -36,12 +37,12 @@ const ActiveQuizDetails = (props: activeQuizDetails) => {
             <div className="activeQuizDetails-timer-container">
                 <div className="activeQuizDetails-timer">
                     <img src={alarm} />
-                    <p>2:00</p>
+                    <p>{props.timeString}</p>
                 </div>
                 <div className="activeQuizDetails-navigation-container-next">
                     <img src={next} className="activeQuizDetails-navigation-next"
                         onClick={() => {
-                            if (props.currentQuestion < props.totalQuestion ) {
+                            if (props.currentQuestion < props.totalQuestion) {
                                 props.currentQuestionSetter(value => value + 1);
                             }
                         }} />
