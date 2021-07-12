@@ -58,16 +58,18 @@ export type inputPropsType = {
 }
 
 export type optionPropType = {
-    text: string; isRight: boolean;
+    index: number;
+    text: string; isRight: boolean; selected: boolean; selectSetter: Dispatch<React.SetStateAction<selectType>>
 }
 
-export type quizQuestionType={
+export type quizQuestionType = {
     img: string,
     question: string,
     options: optionPropType[],
 }
+export type selectType = boolean[]
 
-export type quizQuestionsArray=quizQuestionType[];
+export type quizQuestionsArray = quizQuestionType[];
 
 export type privateRouteType = {
     path: string;
