@@ -3,7 +3,10 @@ import "./navbar.css";
 import menu from "../../utils/images/icons/menu.svg"
 import logo from "../../utils/images/logo.png";
 import { NavLink } from "react-router-dom";
+import { useAuth } from "../../contexts/authContext/authContext";
 const Navbar = () => {
+
+    let { auth: { loginStatus }, authDispatch } = useAuth();
     return (
         <div className="navbar">
             <NavLink end to="/" activeClassName="active-route">
@@ -13,9 +16,9 @@ const Navbar = () => {
                 <NavLink end to="/leaderBoard" activeClassName="active-route">
                     LeaderBoard
                 </NavLink>
-                <NavLink end to="/login" activeClassName="active-route">
+                {loginStatus ? <p onClick={() => { authDispatch({ type: "LOGOUT" }) }}>Logout</p> : <NavLink end to="/login" activeClassName="active-route">
                     Login
-                </NavLink>
+                </NavLink>}
             </div>
             <img className="navbar-menu" src={menu} />
         </div>

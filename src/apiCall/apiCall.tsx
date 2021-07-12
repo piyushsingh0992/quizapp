@@ -1,24 +1,32 @@
 import React from 'react';
 import axios, { AxiosError } from 'axios';
 
-type apiCallPropsType = {
-    type: "GET" | "POST" | "DELETE",
-    endPoint: string, body?: any
-}
+type requestType = "GET" | "POST" | "DELETE";
+
 
 function apiErrorHandler({ error }: { error: any }) {
     if (axios.isAxiosError(error)) {
         if (error && error.response) {
-            return { success: false, message: error.response.data.message };
+            return { success: false, message: error.response.data.message } as failureResult;
         }
     }
 
-    return { success: false, message: "Sorry Couldn't full fill your Request" };
+    return { success: false, message: "Sorry Couldn't full fill your Request" } as failureResult;
 }
 
 
+type successResult = {
+    success: true;
+    data: any
+}
+type failureResult = {
+    success: false;
+    message: string;
+}
 
-export async function apiCall({ type, endPoint, body }: apiCallPropsType) {
+export async function apiCall(type: requestType, endPoint: string, body: any) {
+
+
     switch (type) {
         case "GET":
             try {
@@ -27,12 +35,12 @@ export async function apiCall({ type, endPoint, body }: apiCallPropsType) {
                 );
 
                 if (status === 200) {
-                    return { success: true, data: data };
+                    return { success: true, data: data } as successResult;
                 }
                 return {
                     success: false,
                     message: "Sorry Couldn't full fill your Request",
-                }
+                } as failureResult
             } catch (error) {
                 return apiErrorHandler(error);
             }
@@ -44,12 +52,12 @@ export async function apiCall({ type, endPoint, body }: apiCallPropsType) {
                 );
 
                 if (status === 200) {
-                    return { success: true, data: data };
+                    return { success: true, data: data } as successResult;
                 }
                 return {
                     success: false,
                     message: "Sorry Couldn't full fill your Request",
-                }
+                } as failureResult
             } catch (error) {
                 return apiErrorHandler(error);
             }
@@ -63,12 +71,12 @@ export async function apiCall({ type, endPoint, body }: apiCallPropsType) {
                     }
                 );
                 if (status === 200) {
-                    return { success: true, data: data };
+                    return { success: true, data: data } as successResult;
                 }
                 return {
                     success: false,
                     message: "Sorry Couldn't full fill your Request",
-                }
+                } as failureResult
             } catch (error) {
                 return apiErrorHandler(error);
             }
