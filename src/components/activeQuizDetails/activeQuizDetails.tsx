@@ -3,12 +3,14 @@ import "./activeQuizDetails.css";
 import prev from "../../utils/images/icons/prev.svg";
 import next from "../../utils/images/icons/next.svg";
 import alarm from "../../utils/images/icons/alarm.png";
+import Button from "../buttton/button";
 
 type activeQuizDetails = {
     currentQuestion: number
     , totalQuestion: number,
     currentQuestionSetter: Dispatch<React.SetStateAction<number>>,
-    timeString: string
+    timeString: string,
+    showSubmitSetter: Dispatch<React.SetStateAction<boolean>>
 }
 const ActiveQuizDetails = (props: activeQuizDetails) => {
     return (
@@ -35,6 +37,7 @@ const ActiveQuizDetails = (props: activeQuizDetails) => {
 
 
             <div className="activeQuizDetails-timer-container">
+                <Button text="Submit" clickFunction={() => { props.showSubmitSetter(value => !value) }} />
                 <div className="activeQuizDetails-timer">
                     <img src={alarm} />
                     <p>{props.timeString}</p>

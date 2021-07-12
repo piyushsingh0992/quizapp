@@ -15,6 +15,7 @@ const QuizPage = () => {
     const [quizArray, quizArraySetter] = useState<quizQuestionsArray>([]);
     let { quizId } = useParams() as { quizId: string };
     let [time, timeSetter] = useState<number>(2 * 60 * 1000);
+    // let [time, timeSetter] = useState<number>(5 * 1000);
     let timeString = moment.utc(time).format('mm:ss');
     const [score, scoreSetter] = useState<number>(0);
     const [currentQuestion, currentQuestionSetter] = useState<number>(0);
@@ -54,7 +55,7 @@ const QuizPage = () => {
 
     return loader ? <Loader /> : <div className="quizPage">
         <Navbar />
-        <ActiveQuizDetails currentQuestion={currentQuestion + 1}
+        <ActiveQuizDetails showSubmitSetter={showSubmitSetter} currentQuestion={currentQuestion + 1}
             totalQuestion={quizArray.length} currentQuestionSetter={currentQuestionSetter} timeString={timeString} />
 
 
