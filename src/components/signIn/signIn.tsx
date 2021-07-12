@@ -5,10 +5,13 @@ import Button from "../buttton/button";
 import logo from "../../utils/images/logo.png";
 import { SignInProps, signInObjectType } from "./signInTypes";
 import { useAuth } from "../../contexts/authContext/authContext";
+import { signInFunction } from "../../utils/authFunction/authFunction";
+import { useToast } from "../../contexts/toastContext/toastContext";
 
 
 const SignIn = (props: SignInProps) => {
     let { authDispatch } = useAuth();
+    const { toastDispatch } = useToast();
 
 
 
@@ -34,12 +37,7 @@ const SignIn = (props: SignInProps) => {
                 onChangeFunction={passwordHandler}
             />
             <div className="signin-btn-container">
-                <Button text="Sign In" clickFunction={() => authDispatch({
-                    type: "LOGIN", payload: {
-                        userName: "string",
-                        userKey: "string",
-                    }
-                })} />
+                <Button text="Sign In" clickFunction={() => signInFunction(props.signInObject, toastDispatch, authDispatch)} />
                 <p >
                     Not a Member yet ?
                     <span

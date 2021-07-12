@@ -46,7 +46,7 @@ const LoginPage = () => {
         <div className="loginPage">
             <Navbar />
             <div className="loginPage-popup">
-                {alreadyUser ? <SignIn alreadyUserSetter={alreadyUserSetter} signInObject={signInObject} signInObjectSetter={signInObjectSetter} /> :
+                {alreadyUser ? <SignIn alreadyUserSetter={alreadyUserSetter} signInObject={signInObject} signInObjectSetter={signInObjectSetter} authDispatch={authDispatch}/> :
                     <Signup alreadyUserSetter={alreadyUserSetter} signUpObject={signUpObject} signUpObjectSetter={signUpObjectSetter} signInObjectSetter={signInObjectSetter} />}
 
 
