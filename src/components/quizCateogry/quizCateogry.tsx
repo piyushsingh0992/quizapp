@@ -6,22 +6,12 @@ import QuizCard from "../quizCard/quizCard";
 import leftArrow from "../../utils/images/icons/leftArrow.svg";
 import rightArrow from "../../utils/images/icons/rightArrow.svg";
 import { quizDetails, quizCards } from "../../types/types";
-import { quizCateogry } from "./quizCateogryType";
 
 
-const QuizCateogry = () => {
+const QuizCateogry = (props: { quizCateogry: quizCards }) => {
+
 
     const [position, positionSetter] = useState<number>(0);
-
-    const [quizArray, quizArraySetter] = useState<quizCards | null>(null);
-
-    useEffect(() => {
-        quizArraySetter(quizCateogry);
-    }, [])
-
-
-
-
 
 
     function slideLeft() {
@@ -57,7 +47,7 @@ const QuizCateogry = () => {
             />
             <div className="quiz-card-container" style={{ left: `${position}rem` }} >
 
-                {quizArray?.map(({ quizImg, quizName, quizId }: quizDetails, index) => {
+                {props.quizCateogry.map(({ quizImg, quizName, quizId }: quizDetails, index) => {
                     return <QuizCard quizImg={quizImg} quizName={quizName} quizId={quizId} />
                 })}
             </div>

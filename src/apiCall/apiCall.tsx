@@ -8,6 +8,7 @@ function apiErrorHandler(error: any) {
     if (axios.isAxiosError(error)) {
         if (error && error.response) {
 
+
             return { success: false, message: error.response.data.message } as failureResult;
         }
     }
@@ -18,7 +19,7 @@ function apiErrorHandler(error: any) {
 
 
 
-export async function apiCall(type: requestType, endPoint: string, body: any) {
+export async function apiCall(type: requestType, endPoint: string, body?: any) {
 
 
     switch (type) {
