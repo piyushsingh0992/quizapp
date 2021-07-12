@@ -22,13 +22,12 @@ const LoginPage = () => {
     let { auth: { loginStatus }, authDispatch } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
-    const state = location.state;
-    const { from } = state as { from: string };
+    const state = location.state as { from: string };
+
 
     useEffect(() => {
         if (loginStatus) {
-            console.log("from ->", from);
-            navigate(from ? from : "/");
+            navigate(state?.from ? state.from : "/");
         }
     }, [loginStatus]);
 
