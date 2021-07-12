@@ -3,7 +3,8 @@ import "./signUp.css";
 import Input from "../input/input";
 import logo from "../../utils/images/logo.png";
 import Button from "../buttton/button";
-import { useToast } from "../../contexts/toastContext/toastContext"
+import { useToast } from "../../contexts/toastContext/toastContext";
+import { signUpfunction } from "../../utils/authFunction/authFunction";
 
 type SignUpProps = {
     alreadyUserSetter: Dispatch<boolean>;
@@ -57,7 +58,7 @@ const SignUp = (props: SignUpProps) => {
                 value={signUpObject.password} onChangeFunction={passwordHandler}
             />
             <div className="signUp-btn-container">
-                <Button text="Sign Up" clickFunction={() => { toastDispatch("error", "sorry ") }} />
+                <Button text="Sign Up" clickFunction={() => { signUpfunction(signUpObject, toastDispatch,props.alreadyUserSetter) }} />
                 <p >
                     Already a Member  ?
                     <span

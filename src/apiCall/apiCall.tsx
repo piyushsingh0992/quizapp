@@ -4,13 +4,15 @@ import axios, { AxiosError } from 'axios';
 type requestType = "GET" | "POST" | "DELETE";
 
 
-function apiErrorHandler({ error }: { error: any }) {
+function apiErrorHandler(error: any) {
+    debugger;
     if (axios.isAxiosError(error)) {
         if (error && error.response) {
+            debugger;
             return { success: false, message: error.response.data.message } as failureResult;
         }
     }
-
+    debugger;
     return { success: false, message: "Sorry Couldn't full fill your Request" } as failureResult;
 }
 
@@ -25,7 +27,7 @@ type failureResult = {
 }
 
 export async function apiCall(type: requestType, endPoint: string, body: any) {
-
+    debugger;
 
     switch (type) {
         case "GET":
@@ -56,7 +58,7 @@ export async function apiCall(type: requestType, endPoint: string, body: any) {
                 }
                 return {
                     success: false,
-                    message: "Sorry Couldn't full fill your Request",
+                    message: data.message,
                 } as failureResult
             } catch (error) {
                 return apiErrorHandler(error);
