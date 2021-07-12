@@ -61,6 +61,14 @@ export type optionPropType = {
     text: string; isRight: boolean;
 }
 
+export type quizQuestionType={
+    img: string,
+    question: string,
+    options: optionPropType[],
+}
+
+export type quizQuestionsArray=quizQuestionType[];
+
 export type privateRouteType = {
     path: string;
     element: React.ReactElement;

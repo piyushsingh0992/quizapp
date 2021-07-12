@@ -1,22 +1,52 @@
-import React,{useEffect} from 'react';
+import React, { useEffect, useState } from 'react';
 import "./quizPage.css";
 import Question from "../../components/question/question";
 import ActiveQuizDetails from "../../components/activeQuizDetails/activeQuizDetails";
 import Navbar from "../../components/navbar/navbar";
 import RulesModal from "../../components/rulesModal/rulesModal";
 import SubmitModal from "../../components/submitModal/submitModal";
+import { quizQuestionsArray } from "../../types/types";
+import { apiCall } from '../../apiCall/apiCall';
+import Loader from '../../components/loader/loader';
+import { useParams } from "react-router-dom";
 const QuizPage = () => {
+    const [loader, loaderSetter] = useState<boolean>(true);
+    const [quizArray, quizArraySetter] = useState<quizQuestionsArray | null>(null);
+    let { quizId } = useParams() as { quizId: string };
 
-    useEffect(()=>{},[])
-    return (
-        <div className="quizPage">
-            <Navbar />
-            <ActiveQuizDetails />
-            <Question />
-            {/* <RulesModal /> */}
-            {/* <SubmitModal /> */}
+
+    useEffect(() => {
+        (async function () {
+            try {
+                const response = await apiCall("GET", `quiz/${quizId}`);
+                if (response.success === true) {
+                    quizArraySetter(response.data.questions)
+                    loaderSetter(false);
+                }
+
+            } catch (error) {
+
+            }
+
+        })()
+    }, [])
+
+    return loader ? <Loader /> : <div className="quizPage">
+        <Navbar />
+        <ActiveQuizDetails />
+        <div className="quizQuestionsContainer">
+
+            {quizArray?.map((item) => {
+                return <Question img={item.img} question={item.question} options={item.options} />
+            })}
         </div>
-    );
+
+
+        {/* <RulesModal /> */}
+        {/* <SubmitModal /> */}
+    </div>
+
+
 };
 
 export default QuizPage;
