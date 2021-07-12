@@ -5,39 +5,28 @@ import logo from "../../utils/images/logo.png";
 import Button from "../buttton/button";
 import { useToast } from "../../contexts/toastContext/toastContext";
 import { signUpfunction } from "../../utils/authFunction/authFunction";
-
-type SignUpProps = {
-    alreadyUserSetter: Dispatch<boolean>;
-};
-
-type signUpObjectType = {
-    userName: string,
-    userId: string,
-    password: string,
-}
+import { signUpProps, signUpObjectType } from "./signUpTypes"
 
 
 
-const SignUp = (props: SignUpProps) => {
 
-    let [signUpObject, signUpObjectSetter] = useState<signUpObjectType>({
-        userName: "",
-        userId: "",
-        password: "",
-    })
+
+const SignUp = (props: signUpProps) => {
+
+
 
     const { toastDispatch } = useToast();
 
     function userNameHandler(value: string) {
-        signUpObjectSetter({ ...signUpObject, userName: value });
+        props.signUpObjectSetter({ ...props.signUpObject, userName: value });
     }
 
     function userIdHandler(value: string) {
-        signUpObjectSetter({ ...signUpObject, userId: value });
+        props.signUpObjectSetter({ ...props.signUpObject, userId: value });
     }
 
     function passwordHandler(value: string) {
-        signUpObjectSetter({ ...signUpObject, password: value });
+        props.signUpObjectSetter({ ...props.signUpObject, password: value });
     }
 
 
@@ -46,19 +35,19 @@ const SignUp = (props: SignUpProps) => {
             <img src={logo} />
             <Input
                 label="User Name"
-                value={signUpObject.userName} onChangeFunction={userNameHandler}
+                value={props.signUpObject.userName} onChangeFunction={userNameHandler}
             />
             <Input
                 label="User Id"
-                value={signUpObject.userId} onChangeFunction={userIdHandler}
+                value={props.signUpObject.userId} onChangeFunction={userIdHandler}
 
             />
             <Input
                 label="Password"
-                value={signUpObject.password} onChangeFunction={passwordHandler}
+                value={props.signUpObject.password} onChangeFunction={passwordHandler}
             />
             <div className="signUp-btn-container">
-                <Button text="Sign Up" clickFunction={() => { signUpfunction(signUpObject, toastDispatch,props.alreadyUserSetter) }} />
+                <Button text="Sign Up" clickFunction={() => { signUpfunction(props.signUpObject, toastDispatch, props.alreadyUserSetter, props.signInObjectSetter, props.signUpObjectSetter) }} />
                 <p >
                     Already a Member  ?
                     <span

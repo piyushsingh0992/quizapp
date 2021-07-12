@@ -2,6 +2,9 @@ import { Dispatch } from 'react';
 
 export type SignInProps = {
     alreadyUserSetter: Dispatch<boolean>;
+
+    signInObject: signInObjectType;
+    signInObjectSetter: Dispatch<signInObjectType>
 };
 
 

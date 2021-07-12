@@ -10,17 +10,14 @@ import { useAuth } from "../../contexts/authContext/authContext";
 const SignIn = (props: SignInProps) => {
     let { authDispatch } = useAuth();
 
-    let [signInObject, signInObjectSetter] = useState<signInObjectType>({
-        userId: "",
-        password: "",
-    })
+
 
     function userIdHandler(value: string) {
-        signInObjectSetter({ ...signInObject, userId: value });
+        props.signInObjectSetter({ ...props.signInObject, userId: value });
     }
 
     function passwordHandler(value: string) {
-        signInObjectSetter({ ...signInObject, password: value });
+        props.signInObjectSetter({ ...props.signInObject, password: value });
     }
 
     return (
@@ -28,12 +25,12 @@ const SignIn = (props: SignInProps) => {
             <img src={logo} />
             <Input
                 label="User Id"
-                value={signInObject.userId}
+                value={props.signInObject.userId}
                 onChangeFunction={userIdHandler}
             />
             <Input
                 label="Password"
-                value={signInObject.password}
+                value={props.signInObject.password}
                 onChangeFunction={passwordHandler}
             />
             <div className="signin-btn-container">
