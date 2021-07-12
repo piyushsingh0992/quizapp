@@ -43,7 +43,13 @@ const SignIn = (props: SignInProps) => {
                 <p >
                     Not a Member yet ?
                     <span
-                        onClick={() => { props.alreadyUserSetter(false) }}
+                        onClick={() => {
+                            props.alreadyUserSetter(false);
+                            props.signInObjectSetter({
+                                userId: "",
+                                password: "",
+                            })
+                        }}
                     >
                         &nbsp; Sign Up
                     </span>
