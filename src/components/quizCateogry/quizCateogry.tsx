@@ -5,7 +5,8 @@ import "./quizCateogry.css";
 import QuizCard from "../quizCard/quizCard";
 import leftArrow from "../../utils/images/icons/leftArrow.svg";
 import rightArrow from "../../utils/images/icons/rightArrow.svg";
-import { quizDetails, quizCateogry, quizCards } from "./quizCateogryType";
+import { quizDetails, quizCards } from "../../types/types";
+import { quizCateogry } from "./quizCateogryType";
 
 
 const QuizCateogry = () => {
@@ -30,8 +31,8 @@ const QuizCateogry = () => {
 
     }
     function slideRight() {
-        console.log("position ->",position);
-        if (position >-(2 * 18)) {
+        console.log("position ->", position);
+        if (position > -(2 * 18)) {
             positionSetter(value => value - 18);
         }
 
@@ -56,8 +57,8 @@ const QuizCateogry = () => {
             />
             <div className="quiz-card-container" style={{ left: `${position}rem` }} >
 
-                {quizArray?.map(({ quizImg, quizName,quizId }: quizDetails, index) => {
-                    return <QuizCard quizImg={quizImg} quizName={quizName} quizId={quizId}/>
+                {quizArray?.map(({ quizImg, quizName, quizId }: quizDetails, index) => {
+                    return <QuizCard quizImg={quizImg} quizName={quizName} quizId={quizId} />
                 })}
             </div>
         </div>

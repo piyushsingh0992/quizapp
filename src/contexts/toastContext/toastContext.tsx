@@ -1,17 +1,7 @@
 import { createContext, useContext, useState, ReactNode } from "react";
+import { toastContextType, toastStateType } from "../../types/types"
 
 
-type toastStateType = {
-    trigger: boolean,
-    type: string,
-    message: string
-}
-
-
-type toastContextType = {
-    toastState: toastStateType,
-    toastDispatch: (type: string, message?: string) => void
-}
 const ToastContext = createContext({} as toastContextType);
 
 

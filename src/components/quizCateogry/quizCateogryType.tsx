@@ -6,16 +6,10 @@ import deathNote from "../../utils/images/quizImages/deathNote.png";
 import dragonBallz from "../../utils/images/quizImages/dragonBallz.png";
 import dc from "../../utils/images/quizImages/dc.png";
 import marvel from "../../utils/images/quizImages/marvel.png";
+import {quizCards} from "../../types/types";
 
 
 
-export type quizDetails = {
-    quizImg: string,
-    quizName: string,
-    quizId: string,
-}
-
-export type quizCards = quizDetails[];
 
 export const quizCateogry: quizCards = [
     {

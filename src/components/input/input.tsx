@@ -1,8 +1,6 @@
 import React from 'react';
 import "./input.css";
-type inputPropsType = {
-    label: string; inputType?: string; value: any, onChangeFunction: (value: string) => void
-}
+import {inputPropsType} from "../../types/types";
 
 const Input = ({ label, inputType, value, onChangeFunction }: inputPropsType) => {
     return (

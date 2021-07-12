@@ -5,7 +5,8 @@ import logo from "../../utils/images/logo.png";
 import Button from "../buttton/button";
 import { useToast } from "../../contexts/toastContext/toastContext";
 import { signUpfunction } from "../../utils/authFunction/authFunction";
-import { signUpProps, signUpObjectType } from "./signUpTypes"
+
+import { signUpProps } from "../../types/types";
 
 
 

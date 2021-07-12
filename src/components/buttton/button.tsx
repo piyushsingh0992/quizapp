@@ -1,10 +1,7 @@
 import React from "react";
 import "./button.css";
+import {buttonType} from "../../types/types";
 
-
-type buttonType = {
-    text: string, type?: string, size?: string, clickFunction?: () => void
-}
 
 function Button({ text, type, size, clickFunction }: buttonType) {
 

@@ -7,7 +7,7 @@ import { useAuth } from "../../contexts/authContext/authContext";
 
 import { Location } from "history";
 import { useLocation, useNavigate } from "react-router-dom";
-import { signInObjectType, signUpObjectType } from "./loginPageType";
+import { signInObjectType, signUpObjectType } from "../../types/types";
 
 
 
@@ -46,7 +46,7 @@ const LoginPage = () => {
         <div className="loginPage">
             <Navbar />
             <div className="loginPage-popup">
-                {alreadyUser ? <SignIn alreadyUserSetter={alreadyUserSetter} signInObject={signInObject} signInObjectSetter={signInObjectSetter} authDispatch={authDispatch}/> :
+                {alreadyUser ? <SignIn alreadyUserSetter={alreadyUserSetter} signInObject={signInObject} signInObjectSetter={signInObjectSetter} authDispatch={authDispatch} /> :
                     <Signup alreadyUserSetter={alreadyUserSetter} signUpObject={signUpObject} signUpObjectSetter={signUpObjectSetter} signInObjectSetter={signInObjectSetter} />}
 
 

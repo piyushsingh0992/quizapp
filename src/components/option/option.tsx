@@ -1,19 +1,11 @@
 import React from 'react';
 import "./option.css";
-type optionPropType = {
-    text: string; isRight: boolean;
-}
-
+import {optionPropType} from "../../types/types";
 const Option = ({ text, isRight }: optionPropType) => {
     return (
-
         <div className="option ">
             <p>{text}</p>
         </div>
-        // <div className="selectedOption">
-        //     <p>{text}</p>
-        // </div>
-
     );
 };
 

@@ -3,10 +3,10 @@ import "./signIn.css";
 import Input from "../input/input";
 import Button from "../buttton/button";
 import logo from "../../utils/images/logo.png";
-import { SignInProps, signInObjectType } from "./signInTypes";
 import { useAuth } from "../../contexts/authContext/authContext";
 import { signInFunction } from "../../utils/authFunction/authFunction";
 import { useToast } from "../../contexts/toastContext/toastContext";
+import { SignInProps } from "../../types/types";
 
 
 const SignIn = (props: SignInProps) => {

@@ -1,7 +1,6 @@
 import React from 'react';
 import axios, { AxiosError } from 'axios';
-
-type requestType = "GET" | "POST" | "DELETE";
+import { requestType, successResult, failureResult } from "../types/types";
 
 
 function apiErrorHandler(error: any) {
@@ -17,14 +16,7 @@ function apiErrorHandler(error: any) {
 }
 
 
-type successResult = {
-    success: true;
-    data: any
-}
-type failureResult = {
-    success: false;
-    message: string;
-}
+
 
 export async function apiCall(type: requestType, endPoint: string, body: any) {
 
