@@ -12,6 +12,14 @@ export async function signInFunction({ userId, password }: signInObjectType, toa
             password,
         });
         if (response.success === true) {
+            localStorage.setItem(
+                "loginStatus",
+                JSON.stringify({
+                    userName: response.data.userName,
+                    userKey: response.data.userKey,
+                })
+            )
+
             authDispatch({
                 type: "LOGIN", payload: {
                     userName: response.data.userName,

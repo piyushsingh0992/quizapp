@@ -3,7 +3,12 @@ import "./activeQuizDetails.css";
 import prev from "../../utils/images/icons/prev.svg";
 import next from "../../utils/images/icons/next.svg";
 import alarm from "../../utils/images/icons/alarm.png";
-const ActiveQuizDetails = () => {
+
+type activeQuizDetails = {
+    currentQuestion: number
+    , totalQuestion: number
+}
+const ActiveQuizDetails = (props: activeQuizDetails) => {
     return (
         <div className="activeQuizDetails">
 
@@ -16,7 +21,7 @@ const ActiveQuizDetails = () => {
                 </div>
 
                 <p className="activeQuizDetails-index">
-                    Question (3/10)
+                    Question ({props.currentQuestion}/{props.totalQuestion})
                 </p>
             </div>
 

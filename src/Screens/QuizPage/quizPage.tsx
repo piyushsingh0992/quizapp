@@ -11,9 +11,11 @@ import Loader from '../../components/loader/loader';
 import { useParams } from "react-router-dom";
 const QuizPage = () => {
     const [loader, loaderSetter] = useState<boolean>(true);
-    const [quizArray, quizArraySetter] = useState<quizQuestionsArray | null>(null);
+    const [quizArray, quizArraySetter] = useState<quizQuestionsArray>([]);
     let { quizId } = useParams() as { quizId: string };
 
+    const [score, scoreSetter] = useState<number>(0);
+    const [currentQuestion, currentQuestionSetter] = useState<number>(1);
 
     useEffect(() => {
         (async function () {
@@ -33,9 +35,9 @@ const QuizPage = () => {
 
     return loader ? <Loader /> : <div className="quizPage">
         <Navbar />
-        <ActiveQuizDetails />
+        <ActiveQuizDetails currentQuestion={currentQuestion}
+            totalQuestion={quizArray.length} />
         <div className="quizQuestionsContainer">
-
             {quizArray?.map((item) => {
                 return <Question img={item.img} question={item.question} options={item.options} />
             })}
