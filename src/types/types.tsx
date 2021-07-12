@@ -79,7 +79,7 @@ export type quizDetails = {
     quizId: string,
 }
 
-export type quizCards = quizDetails[];
+export type quizCardArray = quizDetails[];
 
 
 

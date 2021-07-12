@@ -5,11 +5,11 @@ import QuizCateogry from "../../components/quizCateogry/quizCateogry";
 import Navbar from "../../components/navbar/navbar";
 import { apiCall } from '../../apiCall/apiCall';
 import Loader from '../../components/loader/loader';
-import { quizDetails, quizCards } from "../../types/types";
+import { quizDetails, quizCardArray } from "../../types/types";
 
 const HomePage = () => {
     const [loader, loaderSetter] = useState<boolean>(true);
-    const [quizCateogry, quizCateogrySetter] = useState<quizCards >([]);
+    const [quizCateogry, quizCateogrySetter] = useState<quizCardArray >([]);
 
     useEffect(() => {
         (async function () {

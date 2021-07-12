@@ -5,10 +5,10 @@ import "./quizCateogry.css";
 import QuizCard from "../quizCard/quizCard";
 import leftArrow from "../../utils/images/icons/leftArrow.svg";
 import rightArrow from "../../utils/images/icons/rightArrow.svg";
-import { quizDetails, quizCards } from "../../types/types";
+import { quizDetails, quizCardArray } from "../../types/types";
 
 
-const QuizCateogry = (props: { quizCateogry: quizCards }) => {
+const QuizCateogry = (props: { quizCateogry: quizCardArray }) => {
 
 
     const [position, positionSetter] = useState<number>(0);
