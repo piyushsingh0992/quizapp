@@ -15,7 +15,7 @@ const QuizPage = () => {
     let { quizId } = useParams() as { quizId: string };
 
     const [score, scoreSetter] = useState<number>(0);
-    const [currentQuestion, currentQuestionSetter] = useState<number>(1);
+    const [currentQuestion, currentQuestionSetter] = useState<number>(0);
 
     useEffect(() => {
         (async function () {
@@ -35,9 +35,12 @@ const QuizPage = () => {
 
     return loader ? <Loader /> : <div className="quizPage">
         <Navbar />
-        <ActiveQuizDetails currentQuestion={currentQuestion}
-            totalQuestion={quizArray.length} />
-        <div className="quizQuestionsContainer">
+        <ActiveQuizDetails currentQuestion={currentQuestion + 1}
+            totalQuestion={quizArray.length} currentQuestionSetter={currentQuestionSetter}/>
+
+
+        <div className="quizQuestionsContainer" style={{ transform: `translateX(-${currentQuestion * 100}vw)` }}>
+
             {quizArray?.map((item) => {
                 return <Question img={item.img} question={item.question} options={item.options} />
             })}

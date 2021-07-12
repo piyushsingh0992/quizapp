@@ -1,6 +1,6 @@
 .activeQuizDetails {
     display: flex;
-    /* background-color: yellow; */
+
     width: 96%;
     align-items: center;
     justify-content: space-between;
@@ -28,8 +28,13 @@
 .activeQuizDetails-navigation-container-prev,
 .activeQuizDetails-navigation-container-next {
     position: relative;
+}
+
+.activeQuizDetails-navigation-container-prev>img,
+.activeQuizDetails-navigation-container-next>img {
+
     cursor: pointer;
-    /* background-color: blue; */
+
 }
 
 
@@ -81,4 +86,3 @@
     justify-content: space-between;
     margin: 0 2rem;
 }
-

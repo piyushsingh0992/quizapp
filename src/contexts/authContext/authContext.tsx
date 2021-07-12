@@ -29,14 +29,13 @@ export const AuthProvider = (props: { children: ReactNode }) => {
         let login = localStorage.getItem("loginStatus");
         if (login) {
             let { userName, userKey }: { userName: string, userKey: string } = JSON.parse(login);
-            console.log("login ->", login);
-            debugger;
+            
             authDispatch({
                 type: "LOGIN", payload: {
                     userName, userKey
                 }
             })
-            debugger;
+            
         }
 
     }, []);

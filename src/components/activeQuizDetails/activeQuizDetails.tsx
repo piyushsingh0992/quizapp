@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Dispatch } from 'react';
 import "./activeQuizDetails.css";
 import prev from "../../utils/images/icons/prev.svg";
 import next from "../../utils/images/icons/next.svg";
@@ -6,7 +6,8 @@ import alarm from "../../utils/images/icons/alarm.png";
 
 type activeQuizDetails = {
     currentQuestion: number
-    , totalQuestion: number
+    , totalQuestion: number,
+    currentQuestionSetter: Dispatch<React.SetStateAction<number>>
 }
 const ActiveQuizDetails = (props: activeQuizDetails) => {
     return (
@@ -14,7 +15,11 @@ const ActiveQuizDetails = (props: activeQuizDetails) => {
 
             <div className="activeQuizDetails-index-container">
                 <div className="activeQuizDetails-navigation-container-prev">
-                    <img src={prev} className="activeQuizDetails-navigation-prev" />
+                    <img src={prev} className="activeQuizDetails-navigation-prev" onClick={() => {
+                        if (props.currentQuestion > 1) {
+                            props.currentQuestionSetter(value => value - 1);
+                        }
+                    }} />
                     <p>
                         Previous Question
                     </p>
@@ -34,7 +39,12 @@ const ActiveQuizDetails = (props: activeQuizDetails) => {
                     <p>2:00</p>
                 </div>
                 <div className="activeQuizDetails-navigation-container-next">
-                    <img src={next} className="activeQuizDetails-navigation-next" />
+                    <img src={next} className="activeQuizDetails-navigation-next"
+                        onClick={() => {
+                            if (props.currentQuestion < props.totalQuestion ) {
+                                props.currentQuestionSetter(value => value + 1);
+                            }
+                        }} />
                     <p>
                         next Question
                     </p>

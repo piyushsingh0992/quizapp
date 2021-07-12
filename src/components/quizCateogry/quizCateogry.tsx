@@ -21,7 +21,7 @@ const QuizCateogry = (props: { quizCateogry: quizCardArray }) => {
 
     }
     function slideRight() {
-        console.log("position ->", position);
+
         if (position > -(2 * 18)) {
             positionSetter(value => value - 18);
         }

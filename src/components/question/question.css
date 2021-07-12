@@ -1,10 +1,12 @@
 .questions-container {
     text-align: center;
-    padding: 0rem 5rem 1rem 5rem;
+    padding: 0rem 3vw 1rem 3vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-width: 94vw;
+
 }
 
 .question-img {
@@ -22,5 +24,20 @@
     grid-template-rows: auto;
     grid-gap: 20px;
     justify-content: center;
+
+}
+
+@media only screen and (max-width: 600px) {
+    .question {
+        font-size: 1.5rem;
+    }
+
+    .options-container {
+
+        grid-template-columns: 35vw 35vw;
+
+        grid-gap: 10px;
+
+    }
 
 }
