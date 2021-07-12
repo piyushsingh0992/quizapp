@@ -10,6 +10,8 @@ import { apiCall } from '../../apiCall/apiCall';
 import Loader from '../../components/loader/loader';
 import { useParams } from "react-router-dom";
 import moment from "moment";
+import Button from '../../components/buttton/button';
+import ScoreModal from '../../components/scoreModal/scoreModal';
 const QuizPage = () => {
     const [loader, loaderSetter] = useState<boolean>(true);
     const [quizArray, quizArraySetter] = useState<quizQuestionsArray>([]);
@@ -55,6 +57,7 @@ const QuizPage = () => {
 
     return loader ? <Loader /> : <div className="quizPage">
         <Navbar />
+
         <ActiveQuizDetails showSubmitSetter={showSubmitSetter} currentQuestion={currentQuestion + 1}
             totalQuestion={quizArray.length} currentQuestionSetter={currentQuestionSetter} timeString={timeString} />
 
@@ -66,9 +69,11 @@ const QuizPage = () => {
         </div>
 
 
-        {showRulesModal && <RulesModal showRulesModalSetter={showRulesModalSetter} />}
-        {showSubmitModal && <SubmitModal time={time} timeString={timeString} showSubmitSetter={showSubmitSetter} />}
-        {/*  */}
+        {/* {showRulesModal && <RulesModal showRulesModalSetter={showRulesModalSetter} />}
+        {showSubmitModal && <SubmitModal time={time} timeString={timeString} showSubmitSetter={showSubmitSetter} />} */}
+
+        <ScoreModal />
+
     </div>
 
 
