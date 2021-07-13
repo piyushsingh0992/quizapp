@@ -20,7 +20,7 @@ const Question = (props: quizQuestionType) => {
 
             <div className="options-container">
                 {props.options.map((item, index) => {
-                    return <Option questionIndex={props.questionIndex}
+                    return <Option currentQuestionController={props.currentQuestionController}  questionIndex={props.questionIndex}
                         scoreArraySetter={props.scoreArraySetter} index={index} text={item.text} isRight={item.isRight} selected={select[index]} selectSetter={selectSetter} />
                 })}
             </div>

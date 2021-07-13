@@ -60,8 +60,9 @@ export type inputPropsType = {
 export type optionPropType = {
     index: number;
     text: string; isRight: boolean; selected: boolean; selectSetter: Dispatch<React.SetStateAction<selectType>>
-    ,questionIndex: number,
-    scoreArraySetter: Dispatch<React.SetStateAction<scoreArray>>
+    , questionIndex: number,
+    scoreArraySetter: Dispatch<React.SetStateAction<scoreArray>>;
+    currentQuestionController: (type: "NEXT" | "PREV") => void;
 }
 
 export type quizQuestionType = {
@@ -70,8 +71,10 @@ export type quizQuestionType = {
     options: optionPropType[],
     questionIndex: number,
     scoreArraySetter: Dispatch<React.SetStateAction<scoreArray>>
+
+    currentQuestionController: (type: "NEXT" | "PREV") => void;
 }
-type scoreArray = number[]
+
 
 export type selectType = boolean[]
 
@@ -124,3 +127,33 @@ export type toastContextType = {
 }
 
 
+
+export type scoreArray = number[]
+export type modalType = {
+    showRulesModal: boolean;
+    showSubmitModal: boolean;
+    showScoreModal: boolean;
+}
+export type modalPayloadType = {
+    type: "SHOW_RULES" | "SHOW_SUBMIT" | "SHOW_SCORE" | "HIDE_RULES" | "HIDE_SUBMIT" | "HIDE_SCORE";
+}
+
+export type submitModalProps = {
+
+    time: number;
+    modalDispatch: Dispatch<modalPayloadType>;
+    timeSetter: Dispatch<React.SetStateAction<number>>;
+    submitModalTextSetter: Dispatch<React.SetStateAction<string>>;
+    score: number; userKey: string; quizId: string; loaderSetter: Dispatch<React.SetStateAction<boolean>>;
+}
+export type rulesModalProps = {
+    modalDispatch: Dispatch<modalPayloadType>
+}
+
+export type activeQuizDetails = {
+    currentQuestion: number;
+    totalQuestion: number;
+    time: number;
+    modalDispatch: Dispatch<modalPayloadType>;
+    currentQuestionController: (type: "NEXT" | "PREV") => void;
+}

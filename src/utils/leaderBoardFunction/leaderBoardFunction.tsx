@@ -1,8 +1,12 @@
 import { Dispatch } from 'react';
 import { apiCall } from "../../apiCall/apiCall";
-import { signUpObjectType, signInObjectType, authActionType } from "../../types/types";
+import { modalPayloadType } from "../../types/types";
 
-export async function updadteLeaderBoard(score: number, userKey: string, quizId: string, loaderSetter: Dispatch<React.SetStateAction<boolean>>, showScoreSetter: Dispatch<React.SetStateAction<boolean>>, submitModalTextSetter: Dispatch<React.SetStateAction<string>>
+
+
+
+
+export async function updadteLeaderBoard(score: number, userKey: string, quizId: string, loaderSetter: Dispatch<React.SetStateAction<boolean>>, submitModalTextSetter: Dispatch<React.SetStateAction<string>>, modalDispatch: Dispatch<modalPayloadType>
 ) {
     loaderSetter(true);
 
@@ -12,20 +16,19 @@ export async function updadteLeaderBoard(score: number, userKey: string, quizId:
         });
 
         if (response.success === true) {
-            let finalScore = response.data.score;
             let leaderBoard = response.data.leaderBoard;
-            submitModalTextSetter(`Your score is ${finalScore} ${leaderBoard ? "!! Congratulation You made it to leaderBoard" : ""}`)
+            submitModalTextSetter(`Your score is ${score} ${leaderBoard ? "!! Congratulation You made it to leaderBoard" : ""}`)
             loaderSetter(false);
-            showScoreSetter(true);
+            modalDispatch({ type: "SHOW_SCORE" });
         } else {
             submitModalTextSetter(response.message)
             loaderSetter(false);
-            showScoreSetter(true);
+            modalDispatch({ type: "SHOW_SCORE" });
         }
 
     } catch (error) {
         submitModalTextSetter(`Some error Occuured couln't save your data please try again`)
         loaderSetter(false);
-        showScoreSetter(true);
+        modalDispatch({ type: "SHOW_SCORE" });
     }
 }

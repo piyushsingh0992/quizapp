@@ -2,16 +2,18 @@ import React from 'react';
 import "./rulesModal.css";
 import Button from '../buttton/button';
 import close from "../../utils/images/close.png";
+import {rulesModalProps} from "../../types/types"
 
-type rulesModalProps = {
-    showRulesModalSetter: React.Dispatch<React.SetStateAction<boolean>>
-}
+
+
+
+
 
 const RulesModal = (props: rulesModalProps) => {
     return (
         <div className="rulesModal-container">
             <div className="rulesModal">
-                <img src={close} className="rulesModal-close" onClick={() => { props.showRulesModalSetter(false) }} />
+                <img src={close} className="rulesModal-close" onClick={() => { props.modalDispatch({ type: "HIDE_RULES" }) }} />
                 <p>Quiz Rules</p>
                 <ol>
                     <li>You get 4 points for every Right Answer</li>
@@ -19,7 +21,7 @@ const RulesModal = (props: rulesModalProps) => {
                     <li>You will get 2:00 Minutes to complete the whole Quiz</li>
                 </ol>
 
-                <Button text="Start Quiz" clickFunction={() => { props.showRulesModalSetter(false) }} />
+                <Button text="Start Quiz" clickFunction={() => { props.modalDispatch({ type: "HIDE_RULES" }) }} />
             </div>
         </div>
     );

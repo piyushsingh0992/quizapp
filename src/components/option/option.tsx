@@ -21,8 +21,10 @@ const Option = (props: optionPropType) => {
                 }
                 return item;
             })
-
         })
+
+
+        props.currentQuestionController("NEXT");
     }
 
     return (

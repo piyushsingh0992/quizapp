@@ -1,18 +1,14 @@
 import React from 'react';
-import axios, { AxiosError } from 'axios';
+import axios from 'axios';
 import { requestType, successResult, failureResult } from "../types/types";
 
 
 function apiErrorHandler(error: any) {
-
     if (axios.isAxiosError(error)) {
         if (error && error.response) {
-
-
             return { success: false, message: error.response.data.message } as failureResult;
         }
     }
-
     return { success: false, message: "Sorry Couldn't full fill your Request" } as failureResult;
 }
 
@@ -49,11 +45,13 @@ export async function apiCall(type: requestType, endPoint: string, body?: any) {
                 if (status === 200) {
                     return { success: true, data: data } as successResult;
                 }
+
                 return {
                     success: false,
                     message: data.message,
                 } as failureResult
             } catch (error) {
+
                 return apiErrorHandler(error);
             }
         case "DELETE":
