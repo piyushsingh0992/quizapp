@@ -16,6 +16,7 @@ const authHandler = (state: authInitialState, action: authActionType) => {
                 userDetails: action.payload
             }
         case "LOGOUT":
+            window.localStorage.removeItem("loginStatus");
             return {
                 loginStatus: false,
             }
@@ -26,16 +27,16 @@ export const AuthProvider = (props: { children: ReactNode }) => {
     const [auth, authDispatch] = useReducer(authHandler, initialauthState);
 
     useEffect(() => {
-        let login = localStorage.getItem("loginStatus");
+        let login = window.localStorage.getItem("loginStatus");
         if (login) {
             let { userName, userKey }: { userName: string, userKey: string } = JSON.parse(login);
-            
+
             authDispatch({
                 type: "LOGIN", payload: {
                     userName, userKey
                 }
             })
-            
+
         }
 
     }, []);
