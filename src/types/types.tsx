@@ -157,3 +157,8 @@ export type activeQuizDetails = {
     modalDispatch: Dispatch<modalPayloadType>;
     currentQuestionController: (type: "NEXT" | "PREV") => void;
 }
+
+export type scoreModalProps = {
+    submitModalText: string;
+    quizId: string;
+}

@@ -9,14 +9,14 @@ import { modalPayloadType } from "../../types/types";
 export async function updadteLeaderBoard(score: number, userKey: string, quizId: string, loaderSetter: Dispatch<React.SetStateAction<boolean>>, submitModalTextSetter: Dispatch<React.SetStateAction<string>>, modalDispatch: Dispatch<modalPayloadType>
 ) {
     loaderSetter(true);
-
     try {
         let response = await apiCall("POST", `leaderBoard/${quizId}`, {
             score, userKey
         });
 
         if (response.success === true) {
-            let leaderBoard = response.data.leaderBoard;
+            debugger;
+            let leaderBoard = response.data.LeaderBoard;
             submitModalTextSetter(`Your score is ${score} ${leaderBoard ? "!! Congratulation You made it to leaderBoard" : ""}`)
             loaderSetter(false);
             modalDispatch({ type: "SHOW_SCORE" });
