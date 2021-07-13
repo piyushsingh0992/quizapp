@@ -13,7 +13,7 @@
 
 }
 
-.leaderBoard>h1 {
+.leaderBoard> a >h1 {
     color: white;
     text-align: center;
 }

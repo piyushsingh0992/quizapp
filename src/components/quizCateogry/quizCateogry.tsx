@@ -45,7 +45,7 @@ const QuizCateogry = (props: { quizCateogry: quizCardArray }) => {
                     slideRight();
                 }}
             />
-            <div className="quiz-card-container" style={{ left: `${position}rem` }} >
+            <div id="quiz" className="quiz-card-container" style={{ left: `${position}rem` }} >
 
                 {props.quizCateogry.map(({ quizImg, quizName, quizId }: quizDetails, index) => {
                     return <QuizCard quizImg={quizImg} quizName={quizName} quizId={quizId} />

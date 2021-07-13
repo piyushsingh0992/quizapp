@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from "react-router-dom";
 import "./leaderBoard.css";
 
 type scoreItemType = {
@@ -15,13 +15,16 @@ type scoreItemType = {
 type leaderBoardPropType = {
     quizName: string
     scoreArray: scoreItemType[]
+    quizId: string
 }
 
 const leaderBoard = (props: leaderBoardPropType) => {
 
     return (
         <div className="leaderBoard">
-            <h1 >{props.quizName}</h1>
+            <Link to={`/quiz/${props.quizId}`}>
+                <h1 >{props.quizName}</h1>
+            </Link>
             <table className="leaderBoard-table">
                 <tbody>
                     <tr>

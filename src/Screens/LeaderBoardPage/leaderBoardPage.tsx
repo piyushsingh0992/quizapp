@@ -20,7 +20,8 @@ type scoreItemType = {
 type leaderBoardType = {
     quizName: string,
     quizId: string,
-    scoreArray: scoreItemType[]
+    scoreArray: scoreItemType[],
+    _id: string
 }
 
 type leaderBoardTypeArray = leaderBoardType[]
@@ -52,8 +53,8 @@ const LeaderBoardPage = () => {
         <h1>Leader Board</h1>
         <div className="leaderBoard-container">
             {leaderBoardArray.map((item: leaderBoardType) => {
-                
-                return <LeaderBoard quizName={item.quizName} scoreArray={item.scoreArray} />
+
+                return <LeaderBoard quizName={item.quizName} scoreArray={item.scoreArray} quizId={item.quizId} />
             })}
 
         </div>
