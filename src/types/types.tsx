@@ -60,13 +60,19 @@ export type inputPropsType = {
 export type optionPropType = {
     index: number;
     text: string; isRight: boolean; selected: boolean; selectSetter: Dispatch<React.SetStateAction<selectType>>
+    ,questionIndex: number,
+    scoreArraySetter: Dispatch<React.SetStateAction<scoreArray>>
 }
 
 export type quizQuestionType = {
     img: string,
     question: string,
     options: optionPropType[],
+    questionIndex: number,
+    scoreArraySetter: Dispatch<React.SetStateAction<scoreArray>>
 }
+type scoreArray = number[]
+
 export type selectType = boolean[]
 
 export type quizQuestionsArray = quizQuestionType[];

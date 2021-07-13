@@ -1,8 +1,6 @@
 import { Dispatch } from 'react';
-
-import axios from 'axios';
 import { apiCall } from "../../apiCall/apiCall";
-import { signUpObjectType, signInObjectType, authActionType } from "../../types/types"
+import { signUpObjectType, signInObjectType, authActionType } from "../../types/types";
 
 
 export async function signInFunction({ userId, password }: signInObjectType, toastDispatch: (type: string, message?: string) => void, authDispatch: Dispatch<authActionType>) {
