@@ -12,7 +12,7 @@ export async function signInFunction({ userId, password }: signInObjectType, toa
         ;
         if (response.success === true) {
             localStorage.setItem(
-                "loginStatus",
+                "userInfo",
                 JSON.stringify({
                     userName: response.data.userName,
                   

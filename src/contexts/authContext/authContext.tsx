@@ -27,7 +27,7 @@ const authHandler = (state: authInitialState, action: authActionType) => {
             }
         case "LOGOUT":
             setupAuthHeaderForServiceCalls(null);
-            window.localStorage.removeItem("loginStatus");
+            window.localStorage.removeItem("userInfo");
             return {
                 loginStatus: false,
             }
@@ -59,7 +59,7 @@ export const AuthProvider = (props: { children: ReactNode }) => {
 
 
     useEffect(() => {
-        let login = window.localStorage.getItem("loginStatus");
+        let login = window.localStorage.getItem("userInfo");
         
         setupAuthExceptionHandler(authDispatch, navigate);
         if (login) {
