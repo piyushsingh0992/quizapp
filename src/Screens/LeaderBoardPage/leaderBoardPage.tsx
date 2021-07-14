@@ -32,14 +32,16 @@ const LeaderBoardPage = () => {
     const [loader, loaderSetter] = useState<boolean>(true);
     const [leaderBoardArray, leaderBoardArraySetter] = useState<leaderBoardTypeArray>([]);
     useEffect(() => {
+        debugger;
         (async function () {
             try {
                 const response = await apiCall("GET", `leaderBoard`);
+                debugger;
                 if (response.success === true) {
                     leaderBoardArraySetter(response.data.leaderBoards);
                     loaderSetter(false);
                 }
-
+                debugger;
             } catch (error) {
                 debugger;
             }

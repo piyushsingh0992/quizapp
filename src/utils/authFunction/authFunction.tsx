@@ -9,12 +9,14 @@ export async function signInFunction({ userId, password }: signInObjectType, toa
             userId,
             password,
         });
+        ;
         if (response.success === true) {
             localStorage.setItem(
                 "loginStatus",
                 JSON.stringify({
                     userName: response.data.userName,
                     userKey: response.data.userKey,
+                    token: response.data.token
                 })
             )
 
@@ -22,6 +24,7 @@ export async function signInFunction({ userId, password }: signInObjectType, toa
                 type: "LOGIN", payload: {
                     userName: response.data.userName,
                     userKey: response.data.userKey,
+                    token: response.data.token,
                 }
             })
         } else {
