@@ -14,7 +14,8 @@ import { useAuth } from "../../contexts/authContext/authContext";
 import { updadteLeaderBoard } from "../../utils/leaderBoardFunction/leaderBoardFunction";
 import { scoreArray } from "../../types/types";
 
-import {modalHandler} from "./common";
+import { modalHandler } from "./common";
+import { useError } from '../../contexts/errorContext/errorContext';
 
 
 const QuizPage = () => {
@@ -28,6 +29,8 @@ const QuizPage = () => {
     const { auth } = useAuth();
     const [currentQuestion, currentQuestionSetter] = useState<number>(0);
     const [submitModalText, submitModalTextSetter] = useState<string>("");
+    const { errorState, errorDispatch } = useError();
+
 
     const [modal, modalDispatch] = useReducer(modalHandler, {
         showRulesModal: true,
@@ -38,7 +41,7 @@ const QuizPage = () => {
     function currentQuestionController(navigation: "NEXT" | "PREV") {
         switch (navigation) {
             case "NEXT":
-                if (currentQuestion < quizArray.length-1) {
+                if (currentQuestion < quizArray.length - 1) {
                     currentQuestionSetter(value => value + 1);
                 }
                 return;
@@ -60,9 +63,13 @@ const QuizPage = () => {
                     quizArraySetter(response.data.questions);
                     scoreArraySetter(new Array(response.data.questions.length).fill(0));
                     loaderSetter(false);
+                } else {
+                    errorDispatch("ERROR");
                 }
 
             } catch (error) {
+
+                errorDispatch("ERROR");
 
             }
 
@@ -89,14 +96,14 @@ const QuizPage = () => {
         <Navbar />
         <ActiveQuizDetails currentQuestionController={currentQuestionController} modalDispatch={modalDispatch} currentQuestion={currentQuestion + 1}
             totalQuestion={quizArray.length} time={time} />
-        
+
         <div className="quizQuestionsContainer" style={{ transform: `translateX(-${currentQuestion * 100}vw)` }}>
             {quizArray?.map((item, index) => {
-                return <Question currentQuestionController={currentQuestionController}  questionIndex={index} scoreArraySetter={scoreArraySetter} img={item.img} question={item.question} options={item.options} />
+                return <Question currentQuestionController={currentQuestionController} questionIndex={index} scoreArraySetter={scoreArraySetter} img={item.img} question={item.question} options={item.options} />
             })}
         </div>
         {modal.showRulesModal && <RulesModal modalDispatch={modalDispatch} />}
-        {modal.showSubmitModal && <SubmitModal time={time} modalDispatch={modalDispatch} timeSetter={timeSetter} submitModalTextSetter={submitModalTextSetter} loaderSetter={loaderSetter} quizId={quizId} score={scoreArray.reduce((a, b) => { return a + b }, 0)}  />}
+        {modal.showSubmitModal && <SubmitModal time={time} modalDispatch={modalDispatch} timeSetter={timeSetter} submitModalTextSetter={submitModalTextSetter} loaderSetter={loaderSetter} quizId={quizId} score={scoreArray.reduce((a, b) => { return a + b }, 0)} />}
         {modal.showScoreModal && <ScoreModal submitModalText={submitModalText} quizId={quizId} />}
     </div>
 

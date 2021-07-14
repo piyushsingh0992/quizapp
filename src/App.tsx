@@ -8,12 +8,14 @@ import LoginPage from "./Screens/LoginPage/loginPage";
 import Error404Page from "./Screens/Error404Page/error404Page";
 import PrivateRoute from "./components/privateRoute/privateRoute";
 import Toast from "./components/toast/toast";
+import ErrorModal from "./components/errorModal/errorModal";
 export default function App() {
 
 
   return (
     <div className="app">
       <Toast />
+      <ErrorModal />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <PrivateRoute path="/quiz/:quizId" element={<QuizPage />} />

@@ -144,7 +144,7 @@ export type submitModalProps = {
     modalDispatch: Dispatch<modalPayloadType>;
     timeSetter: Dispatch<React.SetStateAction<number>>;
     submitModalTextSetter: Dispatch<React.SetStateAction<string>>;
-    score: number;  quizId: string; loaderSetter: Dispatch<React.SetStateAction<boolean>>;
+    score: number; quizId: string; loaderSetter: Dispatch<React.SetStateAction<boolean>>;
 }
 export type rulesModalProps = {
     modalDispatch: Dispatch<modalPayloadType>
@@ -161,4 +161,11 @@ export type activeQuizDetails = {
 export type scoreModalProps = {
     submitModalText: string;
     quizId: string;
+}
+
+
+
+export type errorContextType = {
+    errorState: boolean,
+    errorDispatch: (status: "ERROR" | "RESOLVE") => void
 }

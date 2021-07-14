@@ -15,7 +15,6 @@ export async function updadteLeaderBoard(score: number,  quizId: string, loaderS
         });
 
         if (response.success === true) {
-            ;
             let leaderBoard = response.data.LeaderBoard;
             submitModalTextSetter(`Your score is ${score} ${leaderBoard ? "!! Congratulation You made it to leaderBoard" : ""}`)
             loaderSetter(false);

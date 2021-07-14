@@ -4,7 +4,7 @@ import Navbar from "../../components/navbar/navbar";
 import LeaderBoard from "../../components/leaderBoard/leaderBoard";
 import { apiCall } from '../../apiCall/apiCall';
 import Loader from '../../components/loader/loader';
-
+import { useError } from '../../contexts/errorContext/errorContext';
 
 
 type scoreItemType = {
@@ -31,6 +31,8 @@ type leaderBoardTypeArray = leaderBoardType[]
 const LeaderBoardPage = () => {
     const [loader, loaderSetter] = useState<boolean>(true);
     const [leaderBoardArray, leaderBoardArraySetter] = useState<leaderBoardTypeArray>([]);
+    const { errorState, errorDispatch } = useError();
+
     useEffect(() => {
         debugger;
         (async function () {
@@ -40,10 +42,12 @@ const LeaderBoardPage = () => {
                 if (response.success === true) {
                     leaderBoardArraySetter(response.data.leaderBoards);
                     loaderSetter(false);
+                }else{
+                    errorDispatch("ERROR");
                 }
-                debugger;
+
             } catch (error) {
-                debugger;
+                errorDispatch("ERROR");
             }
 
         })()

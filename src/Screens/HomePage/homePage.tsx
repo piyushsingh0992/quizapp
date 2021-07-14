@@ -5,24 +5,29 @@ import QuizCateogry from "../../components/quizCateogry/quizCateogry";
 import Navbar from "../../components/navbar/navbar";
 import { apiCall } from '../../apiCall/apiCall';
 import Loader from '../../components/loader/loader';
-import { quizDetails, quizCardArray } from "../../types/types";
+import { quizCardArray } from "../../types/types";
+import { useError } from '../../contexts/errorContext/errorContext';
 
 const HomePage = () => {
     const [loader, loaderSetter] = useState<boolean>(true);
-    const [quizCateogry, quizCateogrySetter] = useState<quizCardArray >([]);
+    const [quizCateogry, quizCateogrySetter] = useState<quizCardArray>([]);
+    const { errorState, errorDispatch } = useError();
+
 
     useEffect(() => {
         (async function () {
             try {
                 const response = await apiCall("GET", "cateorgy");
                 if (response.success === true) {
-                    
+
                     quizCateogrySetter(response.data.quizCategory);
                     loaderSetter(false);
+                } else {
+                    errorDispatch("ERROR");
                 }
 
             } catch (error) {
-
+                errorDispatch("ERROR");
             }
 
         })()
@@ -33,7 +38,7 @@ const HomePage = () => {
             <div className="homePage">
                 <Navbar />
                 <Hero />
-                <QuizCateogry quizCateogry={quizCateogry}/>
+                <QuizCateogry quizCateogry={quizCateogry} />
             </div>
     );
 };
