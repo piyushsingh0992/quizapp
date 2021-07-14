@@ -6,12 +6,12 @@ import { modalPayloadType } from "../../types/types";
 
 
 
-export async function updadteLeaderBoard(score: number, userKey: string, quizId: string, loaderSetter: Dispatch<React.SetStateAction<boolean>>, submitModalTextSetter: Dispatch<React.SetStateAction<string>>, modalDispatch: Dispatch<modalPayloadType>
+export async function updadteLeaderBoard(score: number,  quizId: string, loaderSetter: Dispatch<React.SetStateAction<boolean>>, submitModalTextSetter: Dispatch<React.SetStateAction<string>>, modalDispatch: Dispatch<modalPayloadType>
 ) {
     loaderSetter(true);
     try {
         let response = await apiCall("POST", `leaderBoard/${quizId}`, {
-            score, userKey
+            score
         });
 
         if (response.success === true) {

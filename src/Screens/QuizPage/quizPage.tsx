@@ -79,7 +79,7 @@ const QuizPage = () => {
 
     useEffect(() => {
         if (time <= 0) {
-            updadteLeaderBoard(scoreArray.reduce((a, b) => { return a + b }, 0), auth.userDetails!.userKey, quizId, loaderSetter, submitModalTextSetter, modalDispatch)
+            updadteLeaderBoard(scoreArray.reduce((a, b) => { return a + b }, 0), quizId, loaderSetter, submitModalTextSetter, modalDispatch)
         }
     }, [time])
 
@@ -96,7 +96,7 @@ const QuizPage = () => {
             })}
         </div>
         {modal.showRulesModal && <RulesModal modalDispatch={modalDispatch} />}
-        {modal.showSubmitModal && <SubmitModal time={time} modalDispatch={modalDispatch} timeSetter={timeSetter} submitModalTextSetter={submitModalTextSetter} loaderSetter={loaderSetter} quizId={quizId} score={scoreArray.reduce((a, b) => { return a + b }, 0)} userKey={auth.userDetails!.userKey} />}
+        {modal.showSubmitModal && <SubmitModal time={time} modalDispatch={modalDispatch} timeSetter={timeSetter} submitModalTextSetter={submitModalTextSetter} loaderSetter={loaderSetter} quizId={quizId} score={scoreArray.reduce((a, b) => { return a + b }, 0)}  />}
         {modal.showScoreModal && <ScoreModal submitModalText={submitModalText} quizId={quizId} />}
     </div>
 

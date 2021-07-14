@@ -63,10 +63,10 @@ export const AuthProvider = (props: { children: ReactNode }) => {
         
         setupAuthExceptionHandler(authDispatch, navigate);
         if (login) {
-            let { userName, userKey, token }: { userName: string, userKey: string, token: string } = JSON.parse(login);
+            let { userName,  token }: { userName: string,  token: string } = JSON.parse(login);
             authDispatch({
                 type: "LOGIN", payload: {
-                    userName, userKey, token
+                    userName,  token
                 }
             })            
         }

@@ -23,7 +23,7 @@ const SubmitModal = (props: submitModalProps) => {
                 }} />
                 <p>Are your sure you Want to submit the Quiz you still have {timeString} minutes Left?</p>
                 <Button text="Submit" clickFunction={() => {
-                    updadteLeaderBoard(props.score, props.userKey, props.quizId, props.loaderSetter, props.submitModalTextSetter, props.modalDispatch)
+                    updadteLeaderBoard(props.score, props.quizId, props.loaderSetter, props.submitModalTextSetter, props.modalDispatch)
                 }} />
             </div>
         </div>

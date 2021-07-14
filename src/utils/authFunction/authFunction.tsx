@@ -15,7 +15,7 @@ export async function signInFunction({ userId, password }: signInObjectType, toa
                 "loginStatus",
                 JSON.stringify({
                     userName: response.data.userName,
-                    userKey: response.data.userKey,
+                  
                     token: response.data.token
                 })
             )
@@ -23,7 +23,7 @@ export async function signInFunction({ userId, password }: signInObjectType, toa
             authDispatch({
                 type: "LOGIN", payload: {
                     userName: response.data.userName,
-                    userKey: response.data.userKey,
+                  
                     token: response.data.token,
                 }
             })

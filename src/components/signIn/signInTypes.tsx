@@ -8,7 +8,7 @@ export type SignInProps = {
 };
 export type userDetailsType = {
     userName: string,
-    userKey: string
+    token:string,
 }
 
 export type authActionType = {

@@ -26,7 +26,6 @@ export type SignInProps = {
 };
 export type userDetailsType = {
     userName: string,
-    userKey: string,
     token: string,
 }
 
@@ -145,7 +144,7 @@ export type submitModalProps = {
     modalDispatch: Dispatch<modalPayloadType>;
     timeSetter: Dispatch<React.SetStateAction<number>>;
     submitModalTextSetter: Dispatch<React.SetStateAction<string>>;
-    score: number; userKey: string; quizId: string; loaderSetter: Dispatch<React.SetStateAction<boolean>>;
+    score: number;  quizId: string; loaderSetter: Dispatch<React.SetStateAction<boolean>>;
 }
 export type rulesModalProps = {
     modalDispatch: Dispatch<modalPayloadType>
