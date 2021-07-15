@@ -2,12 +2,12 @@ import React from 'react';
 import "./input.css";
 import {inputPropsType} from "../../types/types";
 
-const Input = ({ label, inputType, value, onChangeFunction }: inputPropsType) => {
+const Input = ({ label, type, value, onChangeFunction }: inputPropsType) => {
     return (
         <span className="input-container">
             <input
                 className="input"
-                type={inputType ? inputType : "text"}
+                type={type ? type : "text"}
                 value={value}
                 required
                 onChange={(e) => { onChangeFunction(e.target.value) }}

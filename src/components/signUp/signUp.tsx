@@ -46,6 +46,7 @@ const SignUp = (props: signUpProps) => {
             <Input
                 label="Password"
                 value={props.signUpObject.password} onChangeFunction={passwordHandler}
+                type="Password"
             />
             <div className="signUp-btn-container">
                 <Button text="Sign Up" clickFunction={() => { signUpfunction(props.signUpObject, toastDispatch, props.alreadyUserSetter, props.signInObjectSetter, props.signUpObjectSetter) }} />

@@ -54,7 +54,7 @@ export type buttonType = {
 }
 
 export type inputPropsType = {
-    label: string; inputType?: string; value: any, onChangeFunction: (value: string) => void
+    label: string; type?: string; value: any, onChangeFunction: (value: string) => void
 }
 
 export type optionPropType = {

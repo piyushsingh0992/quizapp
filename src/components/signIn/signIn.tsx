@@ -35,6 +35,7 @@ const SignIn = (props: SignInProps) => {
                 label="Password"
                 value={props.signInObject.password}
                 onChangeFunction={passwordHandler}
+                type="Password"
             />
             <div className="signin-btn-container">
                 <Button text="Sign In" clickFunction={() => signInFunction(props.signInObject, toastDispatch, authDispatch)} />

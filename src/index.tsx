@@ -5,7 +5,7 @@ import App from './App';
 import { BrowserRouter as Router } from "react-router-dom";
 import { AuthProvider } from "./contexts/authContext/authContext";
 import { ToastProvider } from "./contexts/toastContext/toastContext";
-import { ErrorProvider } from "./contexts/errorContext/errorContext"
+import { ErrorProvider } from "./contexts/errorContext/errorContext";
 
 ReactDOM.render(
   <React.StrictMode>
