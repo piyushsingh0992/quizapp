@@ -16,7 +16,7 @@ const HomePage = () => {
 
     useEffect(() => {
         (async function () {
-            try {
+            
                 const response = await apiCall("GET", "cateorgy");
                 if (response.success === true) {
 
@@ -26,9 +26,7 @@ const HomePage = () => {
                     errorDispatch("ERROR");
                 }
 
-            } catch (error) {
-                errorDispatch("ERROR");
-            }
+            
 
         })()
 

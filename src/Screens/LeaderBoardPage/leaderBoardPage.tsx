@@ -36,7 +36,7 @@ const LeaderBoardPage = () => {
     useEffect(() => {
         debugger;
         (async function () {
-            try {
+            
                 const response = await apiCall("GET", `leaderBoard`);
                 debugger;
                 if (response.success === true) {
@@ -46,9 +46,7 @@ const LeaderBoardPage = () => {
                     errorDispatch("ERROR");
                 }
 
-            } catch (error) {
-                errorDispatch("ERROR");
-            }
+            
 
         })()
     }, [])

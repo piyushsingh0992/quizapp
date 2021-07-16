@@ -57,7 +57,7 @@ const QuizPage = () => {
 
     useEffect(() => {
         (async function () {
-            try {
+            
                 const response = await apiCall("GET", `quiz/${quizId}`);
                 if (response.success === true) {
                     quizArraySetter(response.data.questions);
@@ -67,11 +67,6 @@ const QuizPage = () => {
                     errorDispatch("ERROR");
                 }
 
-            } catch (error) {
-
-                errorDispatch("ERROR");
-
-            }
 
         })()
     }, [])

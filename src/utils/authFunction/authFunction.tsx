@@ -4,7 +4,7 @@ import { signUpObjectType, signInObjectType, authActionType } from "../../types/
 
 
 export async function signInFunction({ userId, password }: signInObjectType, toastDispatch: (type: string, message?: string) => void, authDispatch: Dispatch<authActionType>) {
-    try {
+   
         let response = await apiCall("POST", "auth", {
             userId,
             password,
@@ -30,9 +30,7 @@ export async function signInFunction({ userId, password }: signInObjectType, toa
         } else {
             toastDispatch("error", response.message);
         }
-    } catch (error) {
-        toastDispatch("error", "some error Occured Cann't log you in");
-    }
+    
 }
 
 
@@ -63,7 +61,7 @@ export async function signUpfunction({
     userId,
     password,
 }: signUpObjectType, toastDispatch: (type: string, message?: string) => void, alreadyUserSetter: Dispatch<boolean>, signInObjectSetter: Dispatch<signInObjectType>, signUpObjectSetter: Dispatch<signUpObjectType>) {
-    try {
+    
         let response = await apiCall("POST", `auth/create`, {
             userName,
             userId,
@@ -83,8 +81,5 @@ export async function signUpfunction({
         } else {
             toastDispatch("error", response.message);
         }
-    } catch (error) {
-
-        toastDispatch("error", "error occured");
-    }
+    
 }
