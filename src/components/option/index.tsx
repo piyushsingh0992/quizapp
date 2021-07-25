@@ -1,5 +1,5 @@
 import React from 'react';
-import "./option.css";
+import "./style.css";
 import { optionPropType } from "../../types/types";
 import Question from '../question';
 const Option = (props: optionPropType) => {

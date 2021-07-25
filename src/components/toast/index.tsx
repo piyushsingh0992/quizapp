@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./toast.css";
+import "./style.css";
 import Error from "./images/error.svg";
 import Success from "./images/success.svg";
 import Warning from "./images/warning.svg";

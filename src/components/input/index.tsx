@@ -1,5 +1,5 @@
 import React from 'react';
-import "./input.css";
+import "./style.css";
 import {inputPropsType} from "../../types/types";
 
 const Input = ({ label, type, value, onChangeFunction }: inputPropsType) => {

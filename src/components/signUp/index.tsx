@@ -1,5 +1,5 @@
 import React, { Dispatch, useState } from 'react';
-import "./signUp.css";
+import "./style.css";
 import Input from "../input";
 import logo from "../../utils/images/logo.png";
 import Button from "../buttton";

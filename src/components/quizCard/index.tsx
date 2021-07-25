@@ -1,5 +1,5 @@
 import React from 'react';
-import "./quizCard.css";
+import "./style.css";
 import { quizCardProps } from "../../types/types";
 import { useNavigate } from "react-router-dom";
 import Button from "../buttton";

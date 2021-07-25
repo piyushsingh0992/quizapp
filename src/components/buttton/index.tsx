@@ -1,5 +1,5 @@
 import React from "react";
-import "./button.css";
+import "./style.css";
 import {buttonType} from "../../types/types";
 
 

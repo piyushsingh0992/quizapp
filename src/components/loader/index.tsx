@@ -1,5 +1,5 @@
 import React from "react";
-import "./loader.css";
+import "./style.css";
 import rasengan from "../../utils/images/rasengan.png";
 const Loader = () => {
   return <div className="loader-container">

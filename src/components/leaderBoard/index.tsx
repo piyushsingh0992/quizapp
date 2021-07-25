@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import "./leaderBoard.css";
-
+import "./style.css";
 type scoreItemType = {
     score: number;
     user: {

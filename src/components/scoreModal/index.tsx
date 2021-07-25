@@ -1,5 +1,5 @@
 import React from 'react';
-import "./scoreModal.css";
+import "./style.css";
 import Button from '../buttton';
 import { useNavigate } from "react-router-dom";
 import {scoreModalProps} from "../../types/types"

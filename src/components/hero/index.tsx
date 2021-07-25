@@ -1,5 +1,5 @@
 import React from 'react';
-import "./hero.css";
+import "./style.css";
 import heroImage from "../../utils/images/hero.jpg";
 import Button from "../buttton";
 
