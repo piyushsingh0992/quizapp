@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./app.css";
-import HomePage from "./Screens/HomePage/homePage";
-import QuizPage from "./Screens/QuizPage/quizPage";
-import LeaderBoardPage from "./Screens/LeaderBoardPage/leaderBoardPage";
-import LoginPage from "./Screens/LoginPage/loginPage";
-import Error404Page from "./Screens/Error404Page/error404Page";
+import HomePage from "./Screens/homePage";
+import QuizPage from "./Screens/quizPage";
+import LeaderBoardPage from "./Screens/leaderBoardPage";
+import LoginPage from "./Screens/loginPage";
+import Error404Page from "./Screens/error404Page";
 import PrivateRoute from "./components/privateRoute/privateRoute";
 import Toast from "./components/toast/toast";
 import ErrorModal from "./components/errorModal/errorModal";

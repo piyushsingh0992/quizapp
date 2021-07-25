@@ -57,15 +57,15 @@ const QuizPage = () => {
 
     useEffect(() => {
         (async function () {
-            
-                const response = await apiCall("GET", `quiz/${quizId}`);
-                if (response.success === true) {
-                    quizArraySetter(response.data.questions);
-                    scoreArraySetter(new Array(response.data.questions.length).fill(0));
-                    loaderSetter(false);
-                } else {
-                    errorDispatch("ERROR");
-                }
+
+            const response = await apiCall("GET", `quiz/${quizId}`);
+            if (response.success === true) {
+                quizArraySetter(response.data.questions);
+                scoreArraySetter(new Array(response.data.questions.length).fill(0));
+                loaderSetter(false);
+            } else {
+                errorDispatch("ERROR");
+            }
 
 
         })()
