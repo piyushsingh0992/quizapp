@@ -3,7 +3,7 @@ import "./activeQuizDetails.css";
 import prev from "../../utils/images/icons/prev.svg";
 import next from "../../utils/images/icons/next.svg";
 import alarm from "../../utils/images/icons/alarm.png";
-import Button from "../buttton/button";
+import Button from "../buttton";
 import moment from "moment";
 
 import { activeQuizDetails } from "../../types/types"

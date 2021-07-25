@@ -1,6 +1,6 @@
 import React from 'react';
 import "./submitModal.css";
-import Button from '../buttton/button';
+import Button from '../buttton';
 import close from "../../utils/images/close.png";
 import moment from "moment";
 

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import "./leaderBoardPage.css";
-import Navbar from "../../components/navbar/navbar";
-import LeaderBoard from "../../components/leaderBoard/leaderBoard";
+import Navbar from "../../components/navbar";
+import LeaderBoard from "../../components/leaderBoard";
 import { apiCall } from '../../apiCall/apiCall';
-import Loader from '../../components/loader/loader';
+import Loader from '../../components/loader';
 import { useError } from '../../contexts/errorContext/errorContext';
 
 

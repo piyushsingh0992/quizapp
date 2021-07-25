@@ -1,6 +1,6 @@
 import React from 'react';
 import "./errorModal.css";
-import Button from '../buttton/button';
+import Button from '../buttton';
 
 import { useError } from '../../contexts/errorContext/errorContext';
 

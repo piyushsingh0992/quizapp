@@ -1,8 +1,8 @@
 import React, { Dispatch, useState } from 'react';
 import "./signUp.css";
-import Input from "../input/input";
+import Input from "../input";
 import logo from "../../utils/images/logo.png";
-import Button from "../buttton/button";
+import Button from "../buttton";
 import { useToast } from "../../contexts/toastContext/toastContext";
 import { signUpfunction } from "../../utils/authFunction/authFunction";
 

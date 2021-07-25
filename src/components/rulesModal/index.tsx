@@ -1,6 +1,6 @@
 import React from 'react';
 import "./rulesModal.css";
-import Button from '../buttton/button';
+import Button from '../buttton';
 import close from "../../utils/images/close.png";
 import {rulesModalProps} from "../../types/types"
 

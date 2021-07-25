@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import "./quizCateogry.css";
 
 
-import QuizCard from "../quizCard/quizCard";
+import QuizCard from "../quizCard";
 import leftArrow from "../../utils/images/icons/leftArrow.svg";
 import rightArrow from "../../utils/images/icons/rightArrow.svg";
 import { quizDetails, quizCardArray } from "../../types/types";

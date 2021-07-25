@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import "./loginPage.css";
-import Navbar from "../../components/navbar/navbar";
-import SignIn from '../../components/signIn/signIn';
-import Signup from '../../components/signUp/signUp';
+import Navbar from "../../components/navbar";
+import SignIn from '../../components/signIn';
+import Signup from '../../components/signUp';
 import { useAuth } from "../../contexts/authContext/authContext";
 
 import { Location } from "history";

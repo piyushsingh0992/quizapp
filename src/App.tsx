@@ -6,9 +6,9 @@ import QuizPage from "./Screens/quizPage";
 import LeaderBoardPage from "./Screens/leaderBoardPage";
 import LoginPage from "./Screens/loginPage";
 import Error404Page from "./Screens/error404Page";
-import PrivateRoute from "./components/privateRoute/privateRoute";
-import Toast from "./components/toast/toast";
-import ErrorModal from "./components/errorModal/errorModal";
+import PrivateRoute from "./components/privateRoute";
+import Toast from "./components/toast";
+import ErrorModal from "./components/errorModal";
 export default function App() {
 
 

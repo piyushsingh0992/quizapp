@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import "./homePage.css";
-import Hero from "../../components/hero/hero";
-import QuizCateogry from "../../components/quizCateogry/quizCateogry";
-import Navbar from "../../components/navbar/navbar";
+import Hero from "../../components/hero";
+import QuizCateogry from "../../components/quizCateogry";
+import Navbar from "../../components/navbar";
 import { apiCall } from '../../apiCall/apiCall';
-import Loader from '../../components/loader/loader';
+import Loader from '../../components/loader';
 import { quizCardArray } from "../../types/types";
 import { useError } from '../../contexts/errorContext/errorContext';
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Option from "../option/option";
+import Option from "../option";
 import "./question.css";
 import { quizQuestionType, selectType } from "../../types/types";
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from "../../components/navbar/navbar";
+import Navbar from "../../components/navbar";
 import error404 from "../../utils/images/error404.png";
 import "./error404Page.css"
 const Error404Page = () => {

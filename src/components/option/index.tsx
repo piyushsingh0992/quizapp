@@ -1,7 +1,7 @@
 import React from 'react';
 import "./option.css";
 import { optionPropType } from "../../types/types";
-import Question from '../question/question';
+import Question from '../question';
 const Option = (props: optionPropType) => {
 
 

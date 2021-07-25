@@ -2,7 +2,7 @@ import React from 'react';
 import "./quizCard.css";
 import { quizCardProps } from "../../types/types";
 import { useNavigate } from "react-router-dom";
-import Button from "../buttton/button";
+import Button from "../buttton";
 const QuizCard = ({ quizImg, quizName, quizId }: quizCardProps) => {
     const navigate = useNavigate();
 
