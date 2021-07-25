@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import "./leaderBoardPage.css";
+import "./style.css";
 import Navbar from "../../components/navbar";
 import LeaderBoard from "../../components/leaderBoard";
 import { apiCall } from '../../apiCall/apiCall';

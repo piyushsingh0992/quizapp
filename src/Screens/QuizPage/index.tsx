@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useReducer, Dispatch } from 'react';
-import "./quizPage.css";
+import "./style.css";
 import Question from "../../components/question";
 import ActiveQuizDetails from "../../components/activeQuizDetails";
 import Navbar from "../../components/navbar";
