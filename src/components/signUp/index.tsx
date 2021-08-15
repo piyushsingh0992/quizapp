@@ -15,7 +15,7 @@ import { signUpProps } from "../../types/types";
 const SignUp = (props: signUpProps) => {
 
 
-
+    const [loader, loaderSetter] = useState(false);
     const { toastDispatch } = useToast();
 
     function userNameHandler(value: string) {
@@ -49,7 +49,7 @@ const SignUp = (props: signUpProps) => {
                 type="Password"
             />
             <div className="signUp-btn-container">
-                <Button text="Sign Up" clickFunction={() => { signUpfunction(props.signUpObject, toastDispatch, props.alreadyUserSetter, props.signInObjectSetter, props.signUpObjectSetter) }} />
+                <Button loader={loader} text="Sign Up" clickFunction={() => { signUpfunction(props.signUpObject, toastDispatch, props.alreadyUserSetter, props.signInObjectSetter, props.signUpObjectSetter) }} />
                 <p >
                     Already a Member  ?
                     <span

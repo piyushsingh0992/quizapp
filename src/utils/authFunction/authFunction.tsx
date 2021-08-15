@@ -4,7 +4,6 @@ import { signUpObjectType, signInObjectType, authActionType } from "../../types/
 
 
 export async function signInFunction({ userId, password }: signInObjectType, toastDispatch: (type: string, message?: string) => void, authDispatch: Dispatch<authActionType>) {
-   
         let response = await apiCall("POST", "auth", {
             userId,
             password,

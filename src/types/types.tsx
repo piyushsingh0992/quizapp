@@ -50,7 +50,7 @@ export type failureResult = {
 }
 
 export type buttonType = {
-    text: string, type?: string, size?: string, clickFunction?: () => void
+    loader?: boolean, text: string, type?: string, size?: string, clickFunction?: () => void
 }
 
 export type inputPropsType = {

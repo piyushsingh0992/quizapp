@@ -12,6 +12,7 @@ import { SignInProps } from "../../types/types";
 const SignIn = (props: SignInProps) => {
     let { authDispatch } = useAuth();
     const { toastDispatch } = useToast();
+    const [loader,loaderSetter]=useState(false);
 
 
 
@@ -38,7 +39,7 @@ const SignIn = (props: SignInProps) => {
                 type="Password"
             />
             <div className="signin-btn-container">
-                <Button text="Sign In" clickFunction={() => signInFunction(props.signInObject, toastDispatch, authDispatch)} />
+                <Button loader={loader} text="Sign In" clickFunction={() => signInFunction(props.signInObject, toastDispatch, authDispatch)} />
                 <p >
                     Not a Member yet ?
                     <span
