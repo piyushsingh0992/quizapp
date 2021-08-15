@@ -1,10 +1,9 @@
-import React, { Dispatch, useState, ChangeEvent, useEffect } from 'react';
+import  {  useState, ChangeEvent, useEffect } from 'react';
 import "./style.css";
 import Input from "../input";
 import Button from "../buttton";
 import logo from "../../utils/images/logo.png";
 import { useAuth } from "../../contexts/authContext/authContext";
-// import { signInFunction } from "../../utils/authFunction/authFunction";
 import { useToast } from "../../contexts/toastContext/toastContext";
 import { SignInProps } from "../../types/types";
 import { apiCall } from "../../apiCall/apiCall";
@@ -15,21 +14,9 @@ const SignIn = (props: SignInProps) => {
     const [loader, loaderSetter] = useState(false);
 
     useEffect(() => {
-
         async function signInFunction() {
-
             let response = await apiCall("POST", "auth", props.signInObject);
-            ;
             if (response.success === true) {
-                localStorage.setItem(
-                    "userInfo",
-                    JSON.stringify({
-                        userName: response.data.userName,
-
-                        token: response.data.token
-                    })
-                )
-
                 authDispatch({
                     type: "LOGIN", payload: {
                         userName: response.data.userName,
@@ -45,10 +32,7 @@ const SignIn = (props: SignInProps) => {
             signInFunction()
         }
 
-
-    }, [
-        loader
-    ])
+    }, [loader])
 
 
 

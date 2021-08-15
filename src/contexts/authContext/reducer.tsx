@@ -6,13 +6,20 @@ export const authHandler = (state: authInitialState, action: authActionType) => 
     switch (action.type) {
         case "LOGIN":
             setupAuthHeaderForServiceCalls(action.payload.token);
+            window.localStorage.setItem(
+                "quizAppUserInfo",
+                JSON.stringify({
+                    userName: action.payload.userName,
+                    token: action.payload.token
+                })
+            )
             return {
                 loginStatus: true,
                 userDetails: action.payload
             }
         case "LOGOUT":
             setupAuthHeaderForServiceCalls(null);
-            window.localStorage.removeItem("userInfo");
+            window.localStorage.removeItem("quizAppUserInfo");
             return {
                 loginStatus: false,
             }

@@ -12,7 +12,7 @@ export const AuthProvider = (props: { children: ReactNode }) => {
     const [auth, authDispatch] = useReducer(authHandler, initialauthState);
     const navigate = useNavigate();
     useEffect(() => {
-        let login = window.localStorage.getItem("userInfo");
+        let login = window.localStorage.getItem("quizAppUserInfo");
         setupAuthExceptionHandler(authDispatch, navigate);
         if (login) {
             let { userName, token }: { userName: string, token: string } = JSON.parse(login);
