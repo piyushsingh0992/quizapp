@@ -13,11 +13,11 @@ import ScoreModal from '../../components/scoreModal';
 import { useAuth } from "../../contexts/authContext/authContext";
 import { updadteLeaderBoard } from "../../utils/leaderBoardFunction/leaderBoardFunction";
 import { scoreArray } from "../../types/types";
-
+import { useNavigate } from "react-router-dom";
 import { modalHandler } from "./common";
 import { useError } from '../../contexts/errorContext/errorContext';
 
-
+import { useToast } from "../../contexts/toastContext/toastContext";
 const QuizPage = () => {
     const [loader, loaderSetter] = useState<boolean>(true);
     const [quizArray, quizArraySetter] = useState<quizQuestionsArray>([]);
@@ -29,7 +29,8 @@ const QuizPage = () => {
     const { auth } = useAuth();
     const [currentQuestion, currentQuestionSetter] = useState<number>(0);
     const [submitModalText, submitModalTextSetter] = useState<string>("");
-    const { errorState, errorDispatch } = useError();
+    const { toastDispatch } = useToast();
+    const navigate = useNavigate();
 
 
     const [modal, modalDispatch] = useReducer(modalHandler, {
@@ -49,7 +50,6 @@ const QuizPage = () => {
                 if (currentQuestion >= 1) {
                     currentQuestionSetter(value => value - 1);
                 }
-
         }
 
     }
@@ -57,14 +57,14 @@ const QuizPage = () => {
 
     useEffect(() => {
         (async function () {
-
             const response = await apiCall("GET", `quiz/${quizId}`);
             if (response.success === true) {
                 quizArraySetter(response.data.questions);
                 scoreArraySetter(new Array(response.data.questions.length).fill(0));
                 loaderSetter(false);
             } else {
-                errorDispatch("ERROR");
+                toastDispatch("error",response.message);
+                navigate("/");
             }
 
 

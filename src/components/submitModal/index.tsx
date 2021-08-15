@@ -3,9 +3,6 @@ import "./style.css";
 import Button from '../buttton';
 import close from "../../assets/images/close.png";
 import moment from "moment";
-
-
-import { updadteLeaderBoard } from "../../utils/leaderBoardFunction/leaderBoardFunction";
 import {submitModalProps} from "../../types/types"
 
 
@@ -23,7 +20,7 @@ const SubmitModal = (props: submitModalProps) => {
                 }} />
                 <p>Are your sure you Want to submit the Quiz you still have {timeString} minutes Left?</p>
                 <Button text="Submit" clickFunction={() => {
-                    updadteLeaderBoard(props.score, props.quizId, props.loaderSetter, props.submitModalTextSetter, props.modalDispatch)
+                    props.timeSetter(0);
                 }} />
             </div>
         </div>
