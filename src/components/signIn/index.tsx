@@ -1,4 +1,4 @@
-import React, { Dispatch, useState } from 'react';
+import React, { Dispatch, useState, ChangeEvent } from 'react';
 import "./style.css";
 import Input from "../input";
 import Button from "../buttton";
@@ -12,30 +12,34 @@ import { SignInProps } from "../../types/types";
 const SignIn = (props: SignInProps) => {
     let { authDispatch } = useAuth();
     const { toastDispatch } = useToast();
-    const [loader,loaderSetter]=useState(false);
+    const [loader, loaderSetter] = useState(false);
 
 
 
-    function userIdHandler(value: string) {
-        props.signInObjectSetter({ ...props.signInObject, userId: value });
-    }
 
-    function passwordHandler(value: string) {
-        props.signInObjectSetter({ ...props.signInObject, password: value });
-    }
+
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+        const name = event.target.name;
+        props.signInObjectSetter({
+            ...props.signInObject,
+            [name]: event.target.value,
+        });
+    };
 
     return (
         <div className="signIn" >
             <img src={logo} />
             <Input
+                name="userId"
                 label="User Id"
                 value={props.signInObject.userId}
-                onChangeFunction={userIdHandler}
+                onChangeFunction={handleChange}
             />
             <Input
+                name="password"
                 label="Password"
                 value={props.signInObject.password}
-                onChangeFunction={passwordHandler}
+                onChangeFunction={handleChange}
                 type="Password"
             />
             <div className="signin-btn-container">

@@ -1,4 +1,4 @@
-import { Dispatch } from 'react';
+import { Dispatch, ChangeEvent } from 'react';
 
 export type signUpProps = {
     alreadyUserSetter: Dispatch<boolean>;
@@ -54,7 +54,7 @@ export type buttonType = {
 }
 
 export type inputPropsType = {
-    label: string; type?: string; value: any, onChangeFunction: (value: string) => void
+    name: string, label: string; type?: string; value: any, onChangeFunction: (value: ChangeEvent<HTMLInputElement>) => void
 }
 
 export type optionPropType = {

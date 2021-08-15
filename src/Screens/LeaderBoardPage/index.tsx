@@ -34,19 +34,19 @@ const LeaderBoardPage = () => {
     const { errorState, errorDispatch } = useError();
 
     useEffect(() => {
-        debugger;
-        (async function () {
-            
-                const response = await apiCall("GET", `leaderBoard`);
-                debugger;
-                if (response.success === true) {
-                    leaderBoardArraySetter(response.data.leaderBoards);
-                    loaderSetter(false);
-                }else{
-                    errorDispatch("ERROR");
-                }
 
-            
+        (async function () {
+
+            const response = await apiCall("GET", `leaderBoard`);
+
+            if (response.success === true) {
+                leaderBoardArraySetter(response.data.leaderBoards);
+                loaderSetter(false);
+            } else {
+                errorDispatch("ERROR");
+            }
+
+
 
         })()
     }, [])

@@ -1,4 +1,4 @@
-import React, { Dispatch, useState } from 'react';
+import React, { Dispatch, useState, ChangeEvent } from 'react';
 import "./style.css";
 import Input from "../input";
 import logo from "../../utils/images/logo.png";
@@ -18,34 +18,32 @@ const SignUp = (props: signUpProps) => {
     const [loader, loaderSetter] = useState(false);
     const { toastDispatch } = useToast();
 
-    function userNameHandler(value: string) {
-        props.signUpObjectSetter({ ...props.signUpObject, userName: value });
-    }
 
-    function userIdHandler(value: string) {
-        props.signUpObjectSetter({ ...props.signUpObject, userId: value });
-    }
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+        const name = event.target.name;
+        props.signUpObjectSetter({
+            ...props.signUpObject,
+            [name]: event.target.value,
+        });
+    };
 
-    function passwordHandler(value: string) {
-        props.signUpObjectSetter({ ...props.signUpObject, password: value });
-    }
 
 
     return (
         <div className="signUp" >
             <img src={logo} />
-            <Input
-                label="User Name"
-                value={props.signUpObject.userName} onChangeFunction={userNameHandler}
+            <Input name="userName" label="User Name"
+                value={props.signUpObject.userName} onChangeFunction={handleChange}
             />
-            <Input
+            <Input name="userId"
+
                 label="User Id"
-                value={props.signUpObject.userId} onChangeFunction={userIdHandler}
+                value={props.signUpObject.userId} onChangeFunction={handleChange}
 
             />
-            <Input
+            <Input name="password"
                 label="Password"
-                value={props.signUpObject.password} onChangeFunction={passwordHandler}
+                value={props.signUpObject.password} onChangeFunction={handleChange}
                 type="Password"
             />
             <div className="signUp-btn-container">
