@@ -1,22 +1,38 @@
-import React, { Dispatch, useState, ChangeEvent } from 'react';
+import React, { Dispatch, useState, ChangeEvent, useEffect } from 'react';
 import "./style.css";
 import Input from "../input";
 import logo from "../../utils/images/logo.png";
 import Button from "../buttton";
 import { useToast } from "../../contexts/toastContext/toastContext";
-import { signUpfunction } from "../../utils/authFunction/authFunction";
-
 import { signUpProps } from "../../types/types";
-
-
-
-
+import { apiCall } from "../../apiCall/apiCall";
 
 const SignUp = (props: signUpProps) => {
-
-
     const [loader, loaderSetter] = useState(false);
     const { toastDispatch } = useToast();
+
+    useEffect(() => {
+        async function signUpfunction() {
+            let response = await apiCall("POST", `auth/create`, props.signUpObject);
+            if (response.success === true) {
+                toastDispatch("success", "Account Created");
+                props.alreadyUserSetter(true)
+                props.signInObjectSetter(props.signUpObject);
+                props.signUpObjectSetter({
+                    userName: "",
+                    userId: "",
+                    password: "",
+                });
+                loaderSetter(false);
+            } else {
+                toastDispatch("error", response.message);
+                loaderSetter(false);
+            }
+        }
+        if (loader) {
+            signUpfunction()
+        }
+    }, [loader])
 
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -47,7 +63,9 @@ const SignUp = (props: signUpProps) => {
                 type="Password"
             />
             <div className="signUp-btn-container">
-                <Button loader={loader} text="Sign Up" clickFunction={() => { signUpfunction(props.signUpObject, toastDispatch, props.alreadyUserSetter, props.signInObjectSetter, props.signUpObjectSetter) }} />
+                <Button loader={loader} text="Sign Up" clickFunction={() => {
+                    loaderSetter(true);
+                }} />
                 <p >
                     Already a Member  ?
                     <span
