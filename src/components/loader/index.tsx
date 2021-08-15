@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import rasengan from "../../utils/images/rasengan.png";
+import rasengan from "../../assets/images/rasengan.png";
 const Loader = () => {
   return <div className="loader-container">
     <div className="loader-inner-container">

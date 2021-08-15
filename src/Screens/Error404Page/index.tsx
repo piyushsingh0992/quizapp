@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from "../../components/navbar";
-import error404 from "../../utils/images/error404.png";
+import error404 from "../../assets/images/error404.png";
 import "./style.css";
 const Error404Page = () => {
     return (

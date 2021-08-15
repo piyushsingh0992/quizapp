@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import "./style.css";
 import QuizCard from "../quizCard";
-import leftArrow from "../../utils/images/icons/leftArrow.svg";
-import rightArrow from "../../utils/images/icons/rightArrow.svg";
+import leftArrow from "../../assets/images/icons/leftArrow.svg";
+import rightArrow from "../../assets/images/icons/rightArrow.svg";
 import { quizDetails, quizCardArray } from "../../types/types";
 
 

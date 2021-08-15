@@ -2,7 +2,7 @@ import  {  useState, ChangeEvent, useEffect } from 'react';
 import "./style.css";
 import Input from "../input";
 import Button from "../buttton";
-import logo from "../../utils/images/logo.png";
+import logo from "../../assets/images/logo.png";
 import { useAuth } from "../../contexts/authContext/authContext";
 import { useToast } from "../../contexts/toastContext/toastContext";
 import { SignInProps } from "../../types/types";

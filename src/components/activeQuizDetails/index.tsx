@@ -1,8 +1,8 @@
 import React from 'react';
 import "./style.css";
-import prev from "../../utils/images/icons/prev.svg";
-import next from "../../utils/images/icons/next.svg";
-import alarm from "../../utils/images/icons/alarm.png";
+import prev from "../../assets/images/icons/prev.svg";
+import next from "../../assets/images/icons/next.svg";
+import alarm from "../../assets/images/icons/alarm.png";
 import Button from "../buttton";
 import moment from "moment";
 

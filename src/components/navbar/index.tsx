@@ -1,7 +1,7 @@
 import React from 'react';
 import "./style.css";
-import menu from "../../utils/images/icons/menu.svg"
-import logo from "../../utils/images/logo.png";
+import menu from "../../assets/images/icons/menu.svg"
+import logo from "../../assets/images/logo.png";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../../contexts/authContext/authContext";
 const Navbar = () => {

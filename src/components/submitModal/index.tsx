@@ -1,7 +1,7 @@
 import React from 'react';
 import "./style.css";
 import Button from '../buttton';
-import close from "../../utils/images/close.png";
+import close from "../../assets/images/close.png";
 import moment from "moment";
 
 

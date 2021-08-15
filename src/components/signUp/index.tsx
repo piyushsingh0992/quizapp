@@ -1,7 +1,7 @@
 import React, { Dispatch, useState, ChangeEvent, useEffect } from 'react';
 import "./style.css";
 import Input from "../input";
-import logo from "../../utils/images/logo.png";
+import logo from "../../assets/images/logo.png";
 import Button from "../buttton";
 import { useToast } from "../../contexts/toastContext/toastContext";
 import { signUpProps } from "../../types/types";
