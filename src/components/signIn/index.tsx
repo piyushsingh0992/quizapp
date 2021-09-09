@@ -1,4 +1,4 @@
-import  {  useState, ChangeEvent, useEffect } from 'react';
+import { useState, ChangeEvent, useEffect } from 'react';
 import "./style.css";
 import Input from "../input";
 import Button from "../buttton";
@@ -12,22 +12,24 @@ const SignIn = (props: SignInProps) => {
     let { authDispatch } = useAuth();
     const { toastDispatch } = useToast();
     const [loader, loaderSetter] = useState(false);
+    async function signInFunction() {
+        let response = await apiCall("POST", "auth", props.signInObject);
+        if (response.success === true) {
+            authDispatch({
+                type: "LOGIN", payload: {
+                    userName: response.data.userName,
+                    token: response.data.token,
+                }
+            })
+        } else {
+            toastDispatch("error", response.message);
+        }
+
+    }
 
     useEffect(() => {
-        async function signInFunction() {
-            let response = await apiCall("POST", "auth", props.signInObject);
-            if (response.success === true) {
-                authDispatch({
-                    type: "LOGIN", payload: {
-                        userName: response.data.userName,
-                        token: response.data.token,
-                    }
-                })
-            } else {
-                toastDispatch("error", response.message);
-            }
 
-        }
+
         if (loader) {
             signInFunction()
         }
@@ -65,6 +67,15 @@ const SignIn = (props: SignInProps) => {
             />
             <div className="signin-btn-container">
                 <Button loader={loader} text="Sign In" clickFunction={() => {
+                    loaderSetter(true);
+                    // signInFunction(props.signInObject, toastDispatch, authDispatch)
+                }} />
+                <br/>
+                <Button loader={loader} text="login as Guest" clickFunction={() => {
+                    props.signInObjectSetter({
+                        userId:"piyush1993@gmail.com"
+                        ,password:"hello@1997"
+                    });
                     loaderSetter(true);
                     // signInFunction(props.signInObject, toastDispatch, authDispatch)
                 }} />
