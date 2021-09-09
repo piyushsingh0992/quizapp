@@ -4,6 +4,7 @@
     width: 20rem;
     margin: 1rem;
     min-height: 20rem;
+    
 
     background: #ffffff40;
     /* box-shadow: 0 8px 16px 0 rgba(31, 38, 135, 0.37); */
@@ -29,12 +30,17 @@
     font-weight: 900;
     padding: 0.5rem 0;
     background-color: white;
+    max-width: 8rem;
+    overflow:hidden ;
 }
 
 .leaderBoard-table td {
     font-size: 1.5rem;
     font-weight: 900;
     padding: 0.5rem 0;
+
+    max-width: 8rem;
+    overflow:hidden ;
 }
 
 
